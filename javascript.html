@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Learn_Javascript</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>HTML (khái niệm)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <pre>
+                    JavaScript là một ngôn ngữ lập trình của HTML và WEB
+                    code javascript phải để trong thẻ script
+                    javascript có 2 kiểu giá trị: cố định và biến
+                    biến dùng để lưu trữ giá trị
+                    sử dụng từ khóa var để khai báo biến
+                    javascript phân biệt chữ hoa chữ thường
+                    javascript có 3 lạo dữ liệu: số chuỗi và đối tượng
+                    undefined và null có giá trịn bằng nhau nhưng khác nhau về loại
+                    biến cục bộ được khai báo trục tiếp trong hàm
+                    các số javascript lưu dưới dạng dấu chấm động chính xác gấp đôi
+                    khác đối tượng không thể so sánh
+                    mảng được đánh số còn đối tượng có tên
+                </pre>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Phương thức</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <code>.innerHTML = 'hello'</code> thay đổi ký tự<br/> 
+                    <code>.style.fontSize = '35px'</code> thay đổi css<br/>
+                    <code>window.alert("hello")</code> xuất hiện thông báo<br/>
+                    <code>.length</code> độ dài chuỗi<br/>
+                    <code>.indexOf("john")</code> tìm chuỗi đầu tiên, không thể tìm kiếm mạnh<br/>
+                    <code>.search("john")</code> tìm chuỗi đầu tiên, không thể tìm vị trí thứ 2<br/>
+                    <code>.lastIndexOf("john")</code> tìm chuỗi cuối cùng<br/>
+                    <code>.slice(7, 13)</code> cắt chuỗi theo vị trí, chấp nhận chuỗi âm<br/>
+                    <code>.substring(7, 13)</code> cắt chuỗi theo vị trí, không chấp nhận chuỗi âm<br/>
+                    <code>.substr(7, 6)</code> cắt chuỗi theo vị trí, chỉ số 2 chỉ chiều dài<br/>
+                    <code>.replace("mic", "like")</code> thay thế chuỗi<br/>
+                    <code>.toString</code> trả về 1 số về dạng chuỗi<br/>
+                    <code>.toFixed(0)</code> trả về số lm tròn<br/>
+                    <code>.toPrecision(2)</code> trả về số lm tròn với độ dài chỉ định<br/>
+                    <code>.valueOf()</code> trả về 1 số dươi dạng số<br/>
+                    <code>.parseInt("10")</code> trả về số nguyên<br/>
+                    <code>.map</code> tạo 1 mảng mới, không thay đổi mảng ban đầu thực hiện lệnh trong function<br/>
+                    <code>.filter</code> tạo 1 mảng đạt yêu cầu của function<br/>
+                    <code>.reduce</code> chạy hàm trên mỗi phần tử tạo ra giá trị đơn<br/>
+                    <code>.every</code> kiểm tra xem tất cả các phần tử trong mảng nó có thỏa function<br/>
+                    <code>.some</code> kiểm tra xem một vài các phần tử trong mảng nó có thỏa function<br/>
+
+                </div>
+                <div class="col-md-6">
+                    <code>.src = 'picture.png'</code> thay đổi đường dẫn<br/>
+                    <code>.style.display = "none"</code> ẩn phần tử<br/>
+                    <code>document.getElementById('mode').innerHTML</code> viết vào phần tử<br/>
+                    <code>typeof</code> loại biến<br/>
+                    <code>\"</code> giữ dấu kép trong dấu kép<br/>
+                    <code>/MICROSOFT/i</code> không phân biệt hoa hay thường<br/>
+                    <code>/Microsoft/g</code> thay thế tất cả kết quả<br/>
+                    <code>.toUpperCase()</code> chuyển đổi chữ thường thành chữ hoa<br/>
+                    <code>.trim()</code> xóa khoảng trắng<br/>
+                    <code>.concat(" ", "World!");</code> nối chỗi thay dấu cộng và nối 2 mảng<br/>
+                    <code>.split("|")</code> chuyển chuỗi thành mảng<br/>
+                    <code>.forEach(function)</code> lặp phần tử mảng<br/>
+                    <code>.push("hê lô")</code> thêm phần tử mảng<br/>
+                    <code>.unshift("lemon")</code> thêm phần tử vào mảng<br/>
+                    <code>.pop()</code> đẩy phần tử cuối ra khỏi mảng<br/>
+                    <code>.shift()</code> đẩy phần tử đầu ra khỏi mảng<br/>
+                    <code>.isArray(fruits)</code> kiểm tra phải đối tượng mảng<br/>
+                    <code>.join("_")</code> nối phần tử trong mảng với nhau<br/>
+                    <code>delete</code> xóa phẩn tử<br/>
+                    <code>.splice(2,0,"lemon","kiwi")</code> thêm các mục vào mảng<br/>
+                    <code>.slice(1)</code> cắt thành mảng mới<br/>
+                    <code>.sort()</code> sắp xếp 1 mảng<br/>
+                    <code>.reverse()</code> đảo ngược mảng<br/>
+                    <code>.gettime()</code> trả về mili giây<br>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Example (ví dụ)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <h1>khai báo biến</h1>
+                    <div>
+                        <p id="vali"></p>
+                        <script>
+                            var x, y, z;
+                            x = 5;
+                            y= 6;
+                            z = x * y;
+                            document.getElementById('vali').innerHTML = z;
+                        </script>
+
+                    </div>
+                    <h1>Button</h1>
+                    <div>
+                        <button type="button" onclick="document.getElementById('demo').innerHTML = Date ()">Time</button>
+                        <p id="demo"></p>
+                    </div>
+                    <h1 id="test">thay đổi nội dung</h1>
+                    <div>
+                        <button type="button" onclick="document.getElementById('test').innerHTML = 'hê lô'">test</button>
+                    </div>
+                    <h1>viết vào 1 phần tử</h1>
+                    <div>
+                        <p id="mode"></p>
+                        <script>
+                            document.getElementById('mode').innerHTML = "hello";
+                        </script>
+                    </div>
+                    <h1>nối chuỗi</h1>
+                    <div>
+                        <p id="string"></p>
+                        <script>
+                            var text = "hello"+" "+ "there";
+                            document.getElementById("string").innerHTML = text;
+                        </script>
+                    </div>
+                    <h1>Đối tượng</h1>
+                    <div>
+                        <p id="obj"></p>
+                        <script>
+                            var person = {
+                                firstName : "john",
+                                lastName : "smith",
+                                fullName : function(){
+                                    return this.firstName + " " + this.lastName;
+                                }
+                            }
+                            document.getElementById("obj").innerHTML = person.fullName();
+                        </script>
+                    </div>
+                    <h1>forEach</h1>
+                    <div>
+                        <p id="feach"></p>
+                        <script>
+                            var txt = "", number = [45,4,9,16,25];
+                            number.forEach(fucfeach);
+                            document.getElementById("feach").innerHTML = txt;
+
+                            function fucfeach(value, index, array){
+                                txt = txt + value + "<br>";
+                            }
+                        </script>
+                    </div>
+                    <h1>Date</h1>
+                    <div>
+                        <p id="date"></p>
+                        <script>
+                            var date = new Date();
+                            document.getElementById("date").innerHTML = date;
+                        </script>
+                    </div>
+                    <h1>Date format</h1>
+                    <div>
+                        <p id="dts"></p>
+                        <script>
+                            var dts = new Date("03/25/2018");
+                            document.getElementById("dts").innerHTML = dts;
+                        </script>
+                    </div>
+                    <h1>get time</h1>
+                    <div>
+                        <p id="gtime"></p>
+                        <script>
+                            var gtime = new Date();
+                            document.getElementById('gtime').innerHTML = gtime.getTime();
+                        </script>
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <h2>bóng đèn</h2>
+                    <div>
+                        <button type="button" onclick="document.getElementById('bul').src = 'pic_bulbon.gif'">on</button>
+                        <img id="bul" src="pic_bulboff.gif" alt="">
+                        <button type="button" onclick="document.getElementById('bul').src = 'pic_bulboff.gif'">off</button>
+                    </div>
+                    <h1>hàm javascript</h1>
+                    <div>
+                        <p id="cel"></p>
+                        <p id="fuc"></p>
+                        <p id="text">text</p>
+                        <button type="button" onclick="text()">text</button>
+                        <script>
+                            function text(){
+                                document.getElementById('text').innerHTML = "change";
+                            }
+                            
+                            function myFunction(p1, p2){
+                                return p1 * p2;
+                            }
+                            document.getElementById("fuc").innerHTML = myFunction(4, 5);
+
+                            function toCel(fah){
+                                return (5/9) * (fah-32);
+                            }
+                            document.getElementById('cel').innerHTML = "The temperature is " + toCel(77) + " Celsius";
+                        </script>
+                    </div>
+                    <h1>kiểu dữ liệu bolean</h1>
+                    <div>
+                        <p id="bolean"></p>
+                        <script>
+                            var x = 5;
+                            var y = 5;
+                            var z = 6;
+                            document.getElementById("bolean").innerHTML = (x == y) + "<br>" + (x == z);
+                        </script>
+                    </div>
+                    <h1>kiểu mảng</h1>
+                    <div>
+                        <p id="arr"></p>
+                        <p id="ary"></p>
+                        <p id="sort"></p>
+                        <p id="min">the lower number is</p>
+                        <button onclick="function1()">sort</button>
+                        <script>
+                            var cars = ["saab", "volvo", "bmw"];
+                            document.getElementById("arr").innerHTML = cars[0];
+
+                            var fruits, text, flen, i;
+                            fruits = ["banana", "orange", "apple", "mango"];
+                            flen = fruits.length;
+                            text = "<ul>";
+                            for (i = 0; i < flen; i++){
+                                text += "<li>" + fruits[i] + "</li>";
+                            }
+                            text += "</ul>";
+                            document.getElementById("ary").innerHTML = text;
+                            
+                            var point = [40,100,1,5,25,10];
+                            document.getElementById("sort").innerHTML = point;
+                            function function1(){
+                                point.sort(
+                                    function(a, b){
+                                        return b - a
+                                    }
+                                );
+                                document.getElementById("sort").innerHTML = point;
+                            }
+                            document.getElementById("min").innerHTML = min(point);
+                            function min(arr){
+                                return Math.max.apply(null, arr);
+                            }
+
+                        </script>
+                    </div>
+                    <h1>kiểu đối tượng</h1>
+                    <div>
+                        <p id="dt"></p>
+                        <script>
+                            var person = {firstName : "binh", lastName : "nguyen", age : "20", eyeColor : "blue"};
+                            document.getElementById("dt").innerHTML = person.firstName + " is " + person.age + " years old.";
+                        </script>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <title>Learn_CSS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>CSS (khái niệm)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <pre>
+                    CSS viết tắt Cascading Style Sheets
+                    CSS là ngôn ngữ mô tả phong cách tài liệu, cách hiển thị html, bố cục của nhiều trang web cùng lúc
+                    ba cách để chèn css kiểu ngoài, kiểu nội bộ và kiểu nội tuyến (inline, external, internal)
+                    sử dụng css để xác định kiểu cho trang web
+                    bộ quy tắc css bao gồm bộ chọn(thẻ html, id, class) và khối khai báo(tên thuộc tính và giá trị)
+                    màu được dùng bằng các giá trị rgb, hex, hsl, rgba, hsla
+                    display: block hiển thị trên 2 hàng và không có khoảng cách, display: inline-block thì ngược lại
+                    pseudo_classes (lớp giả) để định nghĩa trạng thái đặc biệt
+                    pseudo_elements (phần tử giả) tạo kiểu cho phần tử chỉ định
+                    gradient (phối màu) hiển thị trơn tru giữa 2 hay nhiều màu
+                    Responsive làm trang web trông đẹp hơn trên tất cả thiết bị
+                    SCSS là 1 processor hỗ trợ quản lý code 
+                    kế thừa trong scss @extend
+                    mô hình hộp: <img src="Capture.PNG" style="max-width: 500px;">
+                    layout: <img src="layout.PNG" style="max-width: 575px;">
+                </pre>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Attributes (thuộc tính)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <code>background-color: tomato</code> <span style="background-color: tomato">màu nền</span><br/>
+                    <code>color: tomato</code> <span style="color: tomato">màu chữ</span><br/>
+                    <code>border: 2px solid violet</code> <span style="border: 2px solid violet">tắt</span><br/>
+                    <code>background-image: url("workplace.jpg")</code> <span style="background-image: url('workplace.jpg');">hình nền</span><br/>
+                    <code>background-repeat: no-repeat</code> hình nền không lặp<br/>
+                    <code>background-position: right top</code> vị trí hiển thị ảnh<br/>
+                    <code>background-size: 100px 80px</code> tùy chỉnh kích thước hình nền<br/>
+                    <code>background-origin</code> chỉ định vị trí ảnh nền<br/>
+                    <code>background-attachment: fixed</code> hình nền cố định<br/>
+                    <code>background: #fff url("workplace.jpg") no-repeat right top</code>tắt<br/>
+                    <code>border-style: dotted solid none double</code> <span style="border-style:dotted double none solid">loại đường viền</span><br/>
+                    <code>border-width: 5px</code> kích thước đường viền<br/>
+                    <code>border-color: red green blue yellow</code> <span style="border-style: solid; border-color: red blue yellow green">màu đường viền</span><br/>
+                    <code>border-radius: 5px</code> <span style="border:2px solid blue;border-radius: 5px;">đường viền tròn</span><br/>
+                    <code>margin: 2px 5px 10px 4px</code> căn lề <br/>
+                    <code>margin: 0 auto</code> căn giữa<br/>
+                    <code>padding: 20px 25px 15px 30px</code> tạo khoảng trống quanh nội dung<br/>
+                    <code>box-sizing: border-box</code> duy trì nội dung<br/>
+                    <code>box-shadow: 10px 10px</code> bóng cho các phần tử<br/>
+                    <code>width: 20px</code> chiều rộng<br/>
+                    <code>height: 20px</code> chiều cao<br/>
+                    <code>max-width: 100px</code> chiều rộng tối đa<br/>
+                    <code>outline-style: dotted</code> loại đường ngoài<br/>
+                    <code>outline-color: red</code> màu đường ngoài<br/>
+                    <code>outline-width: 3px</code>chiều rộng đường ngoài<br/>
+                    <code>outline: 5px solid yellow</code> tắt<br/>
+                    <code>outline-offset: 15px</code> thêm khoảng trống<br/>
+                    <code>overflow: hidden, visible, scroll, auto</code> chống tràn viền, ẩn, hiện, cuộn, tự động<br/>
+                    <code>float: left</code> vị trí hiển thị<br/>
+                    <code>clear: right</code> vị trí hiển thị cạnh float<br/>
+                    <code>transform: rotate(20deg)</code> di chuyển 2D<br/>
+                    <code>transition: 2s</code> 
+                    <code>visibility: visible</code> ẩn hiện phần tử<br/>
+                    <code>top: -15px</code> đặt bên trên<br/>
+                    <code>left: 100px;</code> đặt bên trái<br/>
+                    <code>right: 50px;</code> đặt bên phải<br/>
+                    <code>content: " "</code> thêm nội dung trống<br/>
+                    <code>filter: grayscalle(100%)</code> hiệu ứng hình ảnh<br/>
+                    <code>column-count: 3</code> phân cột<br/>
+                    <code>column-gap: 40px;</code> khoảng cách các cột<br/>
+                    <code>column-style: solid</code> thanh chắn cột<br/>
+                    <code>column-rule: 1px solid lightblue</code> tắt<br/>
+                    <code>grid-gap</code> khoảng cách giữa các lưới<br/>
+                </div>
+                <div class="col-md-6">
+                    <code>text-align: center</code> căn giữa văn bản<br/>
+                    <code>text-decoration: none</code> xóa gạch dưới hoặc trang trí văn bản<br/>
+                    <code>text-transform: uppercase</code> <span style="text-transform: uppercase">chuyển sang chữ hoa</span><br/>
+                    <code>text-indent: 50px</code> <span style="text-indent: 10px">thụt đầu dòng văn bản</span><br/>
+                    <code>letter-spacing: 3px</code> <span style="letter-spacing: 3px">khoảng cách ký tự</span><br/>
+                    <code>line-height: 0.8</code> <span style="line-height: 0.8">khoảng cách giữa các dòng</span><br/>
+                    <code>direction: rtl</code> <span style="direction: rtl">thay đổi hướng văn bản</span><br/>
+                    <code>word-spacing: 10px</code> <span style="word-spacing: 10px;">khoảng cách từ</span><br/>
+                    <code>word-wrap: break-word</code> tách dòng khi không đủ khoảng trống<br/>
+                    <code>text-shadow: 3px 2px red</code> <span style="text-shadow: 2px 2px 4px #000;">bóng văn bản</span><br/>
+                    <code>text-overflow: ellipsis</code> chống tràn nội dụng bằng thên ... <br/>
+                    <code>font-family: "Times New Roman", Times, serif</code> <span style="font-family: 'Times New Roman', Times, serif">phông chữ</span><br/>
+                    <code>font-style: italic</code> <span style="font-style: italic;">kiểu phông chữ</span><br/>
+                    <code>font-size: 20px</code> <span style="font-size: 20px;">kích thước chữ</span><br/>
+                    <code>font-weight:</code> <span style="font-weight: bold"> in đậm</span><br/>
+                    <code>font-variant: small-caps</code> <span style="font-variant: small-caps";>Chữ In Hoa Nhỏ</span><br/>
+                    <code>list-style-type: none</code> xóa đánh dấu mục danh sách<br/>
+                    <code>list-style-image: url("image.png")</code> đánh dấu mục bằng hình ảnh<br/>
+                    <code>list-style-position: inside</code> vị trí hiển thị mục<br/>
+                    <code>list-style: square inside url("image.png")</code>tắt<br/>
+                    <code>border-collapse: collapse</code> thu gọn border<br/>
+                    <code>vertical-align: bottom</code> nơi hiển thị nội dung<br/>
+                    <code>overflow-x: auto</code> thanh cuộn ngang<br/>
+                    <code>display: block</code> ẩn hiện phần tử<br/>
+                    <code>position: static, realative, fixed, absolute, sticky</code> phần tử tĩnh, tương đối, cố định, tuyệt đối, dính<br/>
+                    <code>z-index: -1</code> chồng chéo<br/>
+                    <code>opacity: 0.5</code> hình trong suốt<br/>
+                    <code>a[target] or a[target="_blank"]</code> chọn thuộc tính target<br/>
+                    <code>[attribute|="value"]</code> chọn giá trị chứa từ chỉ định<br/>
+                    <code>counter-reset: section</code> tạo bộ đếm<br/>
+                    <code>counter-increment: section</code> tăng giá trị bộ đếm<br/>
+                    <code>content: "section" cuunter(section) ": "</code>thêm giá trị cho bộ đếm<br/>
+                    <code>animation: example</code> tên chuyển động<br/>
+                    <code>animation-duration: 5s</code> thời gian chuyển động<br/>
+                    <code>animation-delay: 1s</code> độ trễ<br/>
+                    <code>animation-iteration-count: infinite</code> chạy ko giới hạn<br/>
+                    <code>object-fit: cover</code> thay đổi kích thước ảnh video phù hợp với khung chứa<br/>
+                    <code>resize: horizontal</code> thay đổi kích thước<br/>
+                    <code>flex-direction: column</code> bố cục<br/>
+                    <code>justify-content: center</code> sắp xếp các mục flex<br/>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Class (lớp)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <code>fa fa-cloud</code> icon <span class="fa fa-cloud"></span><br/>
+                    <code>material-icons</code> icon <i class="material-icons">cloud</i><br/>
+                    <code>div > p, div + p, div ~ p</code> chọn tất cả phần tử p, hay kề, hay anh em<br/>
+                    <code>p:first-child</code> lớp giả, phần tử p đầu<br/>
+                    <code>q:lang(no)</code> chèn ký tự đặc biệt<br/>
+                    <code>@font-face</code> phông chữ<br/>
+                    <code>:root</code> tạo biến<br/>
+                    <code>@media screen and (max-width: 992px)</code> chế độ reponsive<br/>
+                    <code>%mesage</code> place holder tránh dư thừa code không dùng đến<br/>
+                    <code>@content</code> bổ xung code<br/>
+                </div>
+                <div class="col-md-6">
+                    <code>glyphicon glyphicon-cloud</code> icon <span class="glyphicon glyphicon-cloud"></span><br/>      
+                    <code>a:link, a:visited, a:hover, a:active</code> trạng thái liên kết<br/>       
+                    <code>tr:nth-child(even)</code> bảng sọc vằn<br/>    
+                    <code>p::first-line</code> dòng đầu tiên<br/>
+                    <code>p::first-letter</code> ký tự đầu tiên<br/>
+                    <code>h1::before</code> chèn nộ dung trước phần tử<br/>
+                    <code>h1::after</code> chèn nội dung sau phần tử<br/>
+                    <code>::selection</code> phần tử do người dùng chọn<br/>
+                    <code>$color: #333</code> khai báo biến<br/>
+                    <code>.bg{.bg-red{background: red;}}</code> nesred trong scss<br/>
+                    <code>@mixin mixin_name(tham số){}</code> mixin là 1 directive để gom nhóm<br/>
+                    <code>@include mixin_name</code> mixin có thể truyền tham số<br/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Example (ví dụ)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <h1>liên kết button</h1>
+                    <style>
+                        a:link, a:visited {
+                            background-color: #f44336;
+                            color: white;
+                            padding: 14px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                        }
+
+
+                        a:hover, a:active {
+                            background-color: red;
+                        }
+                    </style>
+                    <a href="#" target="_blank">This is a link</a>
+                    <h1>phần tử do người dùng chọn</h1>
+                    <style>
+                        ::selection {
+                            color: red;
+                            background: yellow;
+                        }
+                    </style>
+                    <p><strong>Note:</strong> Firefox supports an alternative, the ::-moz-selection property.</p>
+                    <h1>thanh điều hướng</h1>
+                    <style>
+                        .roww{
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                            background-color: #333;
+                            position: -webkit-sticky;
+                            position: sticky;
+                            top: 0;
+                        }
+                        .roww li{
+                            float: left;
+                        }
+                        .roww li a{
+                            display: block;
+                            color: white;
+                            text-align: center;
+                            padding: 14px 16px;
+                            text-decoration: none;
+                        }
+                        .roww li a:hove{
+                            background-color: #111;
+                        }
+                        .active{
+                            background-color: #4caf50;
+                        }
+                    </style>
+                    <div class="header">
+                        <h2>scroll down</h2>
+                        <p>scroll down to see the sticky effect</p>
+                    </div>
+                    <ul class="roww">
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#news">news</a></li>
+                        <li><a href="#contact">contact</a></li>
+                    </ul>
+                    <h3>Sticky Navigation Bar Example</h3>
+                    <p>The navbar will <strong>stick</strong> to the top when you reach its scroll position.</p>
+                    <p><strong>Note:</strong> Internet Explorer, Edge 15 and earlier versions do not support sticky positioning. Safari requires a -webkit- prefix.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                    <h1>bộ đếm</h1>
+                    <style>
+                        body {
+                            counter-reset: section;
+                        }
+                        
+                        h2::before {
+                            counter-increment: section;
+                            content: "Section " counter(section) ": ";
+                        }
+                    </style>
+                    <h1>Using CSS Counters:</h1>
+                    <h2>HTML Tutorial</h2>
+                    <h2>CSS Tutorial</h2>
+                    <h2>JavaScript Tutorial</h2>
+                    <h1>phối màu</h1>
+                    <style>
+                        #grad1{
+                            height: 200px;
+                            background: linear-gradient(to bottom right, blue, red);
+                        }
+                    </style>
+                    <div id="grad1"></div>
+                    <h1>bóng phần tử</h1>
+                    <style>
+                        .bong{
+                            width: 300px;
+                            height: 100px;
+                            padding: 15px;
+                            background-color: yellow;
+                            box-shadow: 10px 10px 5px grey;
+                        }
+                    </style>
+                    <div class="bong">This is a div element with a box-shadow</div>
+                    <h1>hiệu ứng 2d</h1>
+                    <style>
+                        #myDiv{
+                            width: 300px;
+                            height: 100px;
+                            background-color: yellow;
+                            border: 1px solid black;
+                        }
+                       #myDiv:hover {
+                            -ms-transform: rotate(20deg); /* IE 9 */
+                            -webkit-transform: rotate(20deg); /* Safari */
+                            transform: rotate(360deg); /* Standard syntax */
+                            transition: 10s;
+                        }
+                    </style>
+                    <div id="myDiv">
+                        This div element is rotated clockwise 20 degrees.
+                    </div>
+                    <h1>ảnh động</h1>
+                    <style> 
+                        .move {
+                            width: 100px;
+                            height: 100px;
+                            background-color: red;
+                            position: relative;
+                            -webkit-animation: myfirst 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
+                            animation: myfirst 5s linear 2s infinite alternate;
+                        }
+                        
+                        /* Safari 4.0 - 8.0 */
+                        @-webkit-keyframes myfirst {
+                            0%   {background-color:red; left:0px; top:0px;}
+                            25%  {background-color:yellow; left:200px; top:0px;}
+                            50%  {background-color:blue; left:200px; top:200px;}
+                            75%  {background-color:green; left:0px; top:200px;}
+                            100% {background-color:red; left:0px; top:0px;}
+                        }
+
+                        /* Standard syntax */
+                        @keyframes myfirst {
+                            0%   {background-color:red; left:0px; top:0px;}
+                            25%  {background-color:yellow; left:200px; top:0px;}
+                            50%  {background-color:blue; left:200px; top:200px;}
+                            75%  {background-color:green; left:0px; top:200px;}
+                            100% {background-color:red; left:0px; top:0px;}
+                        }
+                    </style>
+                    <div class="move"></div>
+                    <h1>overlay</h1>
+                    <style>
+                        .containerr {
+                            position: relative;
+                            width: 50%;
+                        }
+                        
+                        .imager {
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                        }
+                        
+                        .overlayr {
+                            position: absolute;
+                            bottom: 100%;
+                            left: 0;
+                            right: 0;
+                            background-color: #008CBA;
+                            overflow: hidden;
+                            width: 100%;
+                            height:0;
+                            transition: .5s ease;
+                        }
+                        
+                        .containerr:hover .overlayr {
+                            bottom: 0;
+                            height: 100%;
+                        }
+                        
+                        .textr {
+                            white-space: nowrap; 
+                            color: white;
+                            font-size: 20px;
+                            position: absolute;
+                            overflow: hidden;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                        }
+                    </style>
+                    <div class="containerr">
+                        <img src="bk.jpg" alt="Avatar" class="imager">
+                        <div class="overlayr">
+                            <div class="textr">Hello World</div>
+                        </div>
+                    </div>
+                    <h1>nút hoạt hình</h1>
+                    <style>
+                        .button {
+                        display: inline-block;
+                        border-radius: 4px;
+                        background-color: #f4511e;
+                        border: none;
+                        color: #FFFFFF;
+                        text-align: center;
+                        font-size: 28px;
+                        padding: 20px;
+                        width: 200px;
+                        transition: all 0.5s;
+                        cursor: pointer;
+                        margin: 5px;
+                        }
+                        
+                        .button span {
+                        cursor: pointer;
+                        display: inline-block;
+                        position: relative;
+                        transition: 0.5s;
+                        }
+                        
+                        .button span:after {
+                        content: '\00bb';
+                        position: absolute;
+                        opacity: 0;
+                        top: 0;
+                        right: -20px;
+                        transition: 0.5s;
+                        }
+                        
+                        .button:hover span {
+                        padding-right: 25px;
+                        }
+                        
+                        .button:hover span:after {
+                        opacity: 1;
+                        right: 0;
+                        }
+                    </style>
+                    <button class="button" style="vertical-align:middle"><span>Hover </span></button>
+                    <h1>mixin</h1>
+<pre>
+    @mixin nav($background, $color){
+        background: $background;
+        color: $color;
+    }
+    .nav{
+        @include nav(red,white);
+        border: 1px solid;
+    }
+
+    $width-nav: 500px;
+    @if($width-nav<280px){
+        h1{
+            display: none;
+        }
+    }
+    @else{
+        h1{
+            display: block;
+        }
+    }
+</pre>
+
+                </div>
+                <div class="col-md-6">
+                    <h1>mục danh sách</h1>
+                    <style>
+                        ol{
+                            background: #ff9999;
+                            padding: 20px;
+                        }
+                        ul{
+                            background: #ffe5e5;
+                            padding: 20px;
+                        }
+                        ol li{
+                            background: #ffe5e5;
+                            padding: 5px;
+                            margin-left: 35px;
+                        }
+                        ul li{
+                            background: #cce5ff;
+                            margin: 5px;
+                        }
+                    </style>
+                    <ol>
+                        <li>coffee</li>
+                        <li>tea</li>
+                        <li>coca cola</li>
+                    </ol>
+                    <ul>
+                        <li>coffee</li>
+                        <li>tea</li>
+                        <li>coca cola</li>
+                    </ul>
+                    <h1>dropdow mmenu</h1>
+                    <style>
+                        .dropdown {
+                            position: relative;
+                            display: inline-block;
+                        }
+                        .dropbtn {
+                            background-color: #4CAF50;
+                            color: white;
+                            padding: 16px;
+                            font-size: 16px;
+                            border: none;
+                            cursor: pointer;
+                        }
+                        .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            background-color: #f9f9f9;
+                            min-width: 160px;
+                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                            z-index: 1;
+                        }
+
+                        .dropdown-content a {
+                            color: black;
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            display: block;
+                        }
+
+                        .dropdown-content a:hover {background-color: #f1f1f1}
+
+                        .dropdown:hover .dropdown-content {
+                            display: block;
+                        }
+
+                        .dropdown:hover .dropbtn {
+                            background-color: #3e8e41;
+                        }
+                    </style>
+                    <div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                            <a href="#">Linnk 1</a>
+                            <a href="#">Linnk 2</a>
+                            <a href="#">Linnk 3</a>
+                        </div>
+                    </div>
+                    <h1>dropdow image</h1>
+                    <style>
+                        .dropdown {
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            background-color: #f9f9f9;
+                            min-width: 160px;
+                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                            z-index: 1;
+                        }
+
+                        .dropdown:hover .dropdown-content {
+                            display: block;
+                        }
+
+                        .desc {
+                            padding: 15px;
+                            text-align: center;
+                        }
+                    </style>
+                    <div class="dropdown">
+                        <img src="bk.jpg" alt="Cinque Terre" width="100" height="50">
+                        <div class="dropdown-content">
+                            <img src="bk.jpg" alt="Cinque Terre" width="300" height="200">
+                            <div class="desc">Beautiful Cinque Terre</div>
+                        </div>
+                    </div>
+                    <h1>thư viện ảnh</h1>
+                    <style>
+                        div.gallery {
+                            margin: 5px;
+                            border: 1px solid #ccc;
+                            float: left;
+                            width: 180px;
+                        }
+                        
+                        div.gallery:hover {
+                            border: 1px solid #777;
+                        }
+                        
+                        div.gallery img {
+                            width: 100%;
+                            height: auto;
+                        }
+                        
+                        div.desc {
+                            padding: 15px;
+                            text-align: center;
+                        }
+                    </style>
+                    <div class="gallery">
+                        <a target="_blank" href="fjords.jpg">
+                            <img src="bk.jpg" alt="Cinque Terre" width="300" height="200">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="forest.jpg">
+                            <img src="bk.jpg" alt="Forest" width="300" height="200">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="lights.jpg">
+                            <img src="bk.jpg" alt="Northern Lights" width="300" height="200">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="mountains.jpg">
+                            <img src="bk.jpg" alt="Mountains" width="300" height="200">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                    <h1>form</h1>
+                    <style>
+                        input[type=text], select {
+                            width: 100%;
+                            padding: 12px 20px;
+                            margin: 8px 0;
+                            display: inline-block;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                        }
+
+                        input[type=submit] {
+                            width: 100%;
+                            background-color: #4CAF50;
+                            color: white;
+                            padding: 14px 20px;
+                            margin: 8px 0;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        }
+
+                        input[type=submit]:hover {
+                            background-color: #45a049;
+                        }
+
+                        .form {
+                            border-radius: 5px;
+                            background-color: #f2f2f2;
+                            padding: 20px;
+                        }
+                    </style>
+                    <div class="form">
+                        <form action="/action_page.php">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                            </select>
+                        
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                    <h1>search</h1>
+                    <style> 
+                        .news input[type=text] {
+                            width: 130px;
+                            box-sizing: border-box;
+                            border: 2px solid #ccc;
+                            border-radius: 4px;
+                            font-size: 16px;
+                            background-color: white;
+                            background-image: url('searchicon.png');
+                            background-position: 10px 10px; 
+                            background-repeat: no-repeat;
+                            padding: 12px 20px 12px 40px;
+                            -webkit-transition: width 0.4s ease-in-out;
+                            transition: width 0.4s ease-in-out;
+                        }
+                        
+                        .news input[type=text]:focus {
+                            width: 100%;
+                        }
+                    </style>
+                    <form class="news">
+                        <input type="text" name="search" placeholder="Search..">
+                    </form>
+                    <h1>biểu mẫu</h1>
+                    <style>
+                        * {
+                            box-sizing: border-box;
+                        }
+                        
+                        input[type=text], select, textarea {
+                            width: 100%;
+                            padding: 12px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            resize: vertical;
+                        }
+                        
+                        label {
+                            padding: 12px 12px 12px 0;
+                            display: inline-block;
+                        }
+                        
+                        input[type=submit] {
+                            background-color: #4CAF50;
+                            color: white;
+                            padding: 12px 20px;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            float: right;
+                        }
+                        
+                        input[type=submit]:hover {
+                            background-color: #45a049;
+                        }
+                        
+                        .container2 {
+                            border-radius: 5px;
+                            background-color: #f2f2f2;
+                            padding: 20px;
+                        }
+                        
+                        .col-25 {
+                            float: left;
+                            width: 25%;
+                            margin-top: 6px;
+                        }
+                        
+                        .col-75 {
+                            float: left;
+                            width: 75%;
+                            margin-top: 6px;
+                        }
+                        
+                        /* Clear floats after the columns */
+                        .row:after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+                        
+                        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+                        @media screen and (max-width: 600px) {
+                            .col-25, .col-75, input[type=submit] {
+                                width: 100%;
+                                margin-top: 0;
+                            }
+                        }
+                    </style>
+                    <div class="container2">
+                        <form action="/action_page.php">
+                            <div class="row">
+                            <div class="col-25">
+                                <label for="fname">First Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-25">
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-25">
+                                <label for="country">Country</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="country" name="country">
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-25">
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <h1>chú thích</h1>
+                    <style>
+                        .tooltippp {
+                            position: relative;
+                            display: inline-block;
+                            border-bottom: 1px dotted black;
+                        }
+
+                        .tooltippp .tooltiptextpp {
+                            visibility: hidden;
+                            width: 120px;
+                            background-color: black;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 6px;
+                            padding: 5px 0;
+                            position: absolute;
+                            z-index: 1;
+                            top: 150%;
+                            left: 50%;
+                            margin-left: -60px;
+                        }
+
+                        .tooltippp .tooltiptextpp::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 100%;
+                            left: 50%;
+                            margin-left: -5px;
+                            border-width: 5px;
+                            border-style: solid;
+                            border-color: transparent transparent black transparent;
+                        }
+
+                        .tooltippp:hover .tooltiptextpp {
+                            visibility: visible;
+                        }
+                    </style>
+                    <div class="tooltippp">Hover over me
+                        <span class="tooltiptextpp">Tooltip text</span>
+                    </div>
+                    <h1>hiệu ứng hình ảnh</h1>
+                    <style>
+                        
+                        #namen{
+                            width: 33%;
+                            height: auto;
+                            float: left; 
+                            max-width: 235px;
+                        }
+                        
+                        .invert {-webkit-filter: invert(100%);filter: invert(100%);}
+                    </style>
+                    <div>
+                        <img id="namen" class="invert" src="bk.jpg" alt="Pineapple" width="300" height="300">
+                    </div>
+                    <h1>xem hình ảnh</h1>
+                    <style>
+                        #myImg {
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: 0.3s;
+                        }
+                        
+                        #myImg:hover {opacity: 0.7;}
+                        
+                        /* The Modal (background) */
+                        .modal {
+                            display: none; /* Hidden by default */
+                            position: fixed; /* Stay in place */
+                            z-index: 1; /* Sit on top */
+                            padding-top: 100px; /* Location of the box */
+                            left: 0;
+                            top: 0;
+                            width: 100%; /* Full width */
+                            height: 100%; /* Full height */
+                            overflow: auto; /* Enable scroll if needed */
+                            background-color: rgb(0,0,0); /* Fallback color */
+                            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+                        }
+                        
+                        /* Modal Content (image) */
+                        .modal-content {
+                            margin: auto;
+                            display: block;
+                            width: 80%;
+                            max-width: 700px;
+                        }
+                        
+                        /* Caption of Modal Image */
+                        #caption {
+                            margin: auto;
+                            display: block;
+                            width: 80%;
+                            max-width: 700px;
+                            text-align: center;
+                            color: #ccc;
+                            padding: 10px 0;
+                            height: 150px;
+                        }
+                        
+                        /* Add Animation */
+                        .modal-content, #caption {    
+                            -webkit-animation-name: zoom;
+                            -webkit-animation-duration: 0.6s;
+                            animation-name: zoom;
+                            animation-duration: 0.6s;
+                        }
+                        
+                        @-webkit-keyframes zoom {
+                            from {-webkit-transform: scale(0)} 
+                            to {-webkit-transform: scale(1)}
+                        }
+                        
+                        @keyframes zoom {
+                            from {transform: scale(0.1)} 
+                            to {transform: scale(1)}
+                        }
+                        
+                        /* The Close Button */
+                        .close {
+                            position: absolute;
+                            top: 15px;
+                            right: 35px;
+                            color: #f1f1f1;
+                            font-size: 40px;
+                            font-weight: bold;
+                            transition: 0.3s;
+                        }
+                        
+                        .close:hover,
+                        .close:focus {
+                            color: #bbb;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                        
+                        /* 100% Image Width on Smaller Screens */
+                        @media only screen and (max-width: 700px){
+                            .modal-content {
+                                width: 100%;
+                            }
+                        }
+                    </style>
+                    <img id="myImg" src="bk.jpg" alt="Northern Lights, Norway" width="300" height="200">
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close">×</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+
+                    <script>
+                    // Get the modal
+                    var modal = document.getElementById('myModal');
+
+                    // Get the image and insert it inside the modal - use its "alt" text as a caption
+                    var img = document.getElementById('myImg');
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() { 
+                        modal.style.display = "none";
+                    }
+                    </script>
+                    <h1>phân trang</h1>
+                    <style>
+                        .paginationn {
+                            display: inline-block;
+                        }
+                        
+                        .paginationn a {
+                            color: black;
+                            float: left;
+                            padding: 8px 16px;
+                            text-decoration: none;
+                        }
+                        
+                        .paginationn a.active {
+                            background-color: #4CAF50;
+                            color: white;
+                            border-radius: 5px;
+                        }
+                        
+                        .paginationn a:hover:not(.active) {
+                            background-color: #ddd;
+                            border-radius: 5px;
+                        }
+
+                        ul.breadcrumb {
+                            padding: 8px 16px;
+                            list-style: none;
+                            background-color: #eee;
+                        }
+                        ul.breadcrumb li {display: inline;}
+                        ul.breadcrumb li+li:before {
+                            padding: 8px;
+                            color: black;
+                            content: "/\00a0";
+                        }
+                        ul.breadcrumb li a {color: green;}
+                    </style>
+                    <div class="paginationn">
+                        <a href="#">&laquo;</a>
+                        <a href="#">1</a>
+                        <a href="#" class="active">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pictures</a></li>
+                        <li><a href="#">Summer 15</a></li>
+                        <li>Italy</li>
+                    </ul>
+                    <h1>loop</h1>
+                    <div>
+<pre>
+    @for $i from 1 through 4{
+        #item-#{$i}{
+            background: red;
+        }
+    }
+
+    @while $index <= 10{
+        col-xs-#{$index}{
+            background: red;
+        }
+        $index:{$index+1};
+    }
+    $index:1;
+
+    @function width_wrapper($value){
+        @return($value + 20px);
+    }
+    .wrapper{
+        width: width_wrapper(80px);
+    }
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

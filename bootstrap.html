@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+    <title>Learn_Bootstrap</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Bootstrap (khái niệm)</h1>
+            <div class="col-md-10 mx-auto">
+<pre>
+    Mark Otto, Jacob Thornton tại twitter phát triển 
+    xuất bản như mã nguồn mở 8/2011 trên github
+    bootstrap là khuôn khổ front-end miễn phí để phát triển web nhanh hơn và dễ dàng hơn
+    bootstrap là framework cho phép thiết kế reposive
+    Hệ thống lưới của bootstrap được xây dựng với flexbox gồm 12 cột trên 1 dòng
+    bootstrap 4 là phiên bản mới nhất của bootstrap
+    API (Application Programming Interface) 
+    API là một tập hợp các phuông thức và công cụ có thể sử dụng để xây dựng các ứng dụng phần mền
+</pre>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Class (đặt tên lớp)</h1>
+            <div class="col-md-10 mx-auto">
+                <div class="col-md-6 float-left">
+                    <code>container</code> khung chính giữa<br/>
+                    <code>container-fluid</code> kéo khung toàn bộ chiều rộng<br/>
+                    <code>row</code> tạo hàng<br/>
+                    <code>col</code> tạo cột<br/>
+                    <code>display-1</code> hiển thị tiêu đề<br/>
+                    <code>blockquote</code> trích dẫn nội dung<br/>
+                    <code>text-primary</code> màu chữ<br/>
+                    <code>bg-success</code> màu nền<br/>
+                    <code>table</code> tạo bảng<br/>
+                    <code>table-hover</code> hiệu ứng khi rê chuột vào bảng<br/>
+                    <code>table-dark</code> màu bảng<br/>
+                    <code>rounded-circle</code> bo ảnh<br/>
+                    <code>ing-thumbnail</code> khung ảnh<br/>
+                    <code>float-left</code> căn trái<br/>
+                    <code>mx-auto</code> margin<br/>
+                    <code>d-block</code> display<br/>
+                    <code>w-2s</code> width 20%<br/>
+                    <code>mw-100</code> max width<br/>
+                    <code>shadow-lg</code> bóng hộp<br/>
+                    <code>embed-responsive</code> thay đổi kích thước video<br/>
+                    <code>visible</code> xóa hiển thị<br/>
+                    <code>fixed-top</code> cố định<br/>
+                    <code>sticky-top</code> cố định mọi phần tử<br/>
+                    <code>flex</code> tạo bố cục<br/>
+                    <code>media</code> đối tượng truyền thông<br/>
+                    <code>data-toggle="tooltip"</code> tạo hộp pop-up<br/>
+                    <code>data-toggle="popover"</code> tạo của số bật lên<br/>
+                    <code>data-spy="scoll"</code> dùng để cuộn<br/>
+                    <code>border</code> bo đường viền<br/>
+                    <code>rounded</code> bo tròn<br/> 
+                    <code>input-group</code> nhóm đầu vào<br/>
+                </div>
+                <div class="col-md-6 float-left">
+                    <code>jumbotron</code> tạo khung xám<br/>
+                    <code>alert</code> thông báo<br/>
+                    <code>alert-link</code> tạo liên kết thông báo<br/>
+                    <code>alert-dismissible</code> đóng thông báo<br/>
+                    <code>fade show</code> đóng mờ dần thông báo<br/>
+                    <code>btn</code> button<br/>
+                    <code>btn-primary</code> màu button<br/>
+                    <code>btn-outline-primary</code> đường viền button<br/>
+                    <code>btn-group</code> nhóm nút<br/>
+                    <code>badge</code> huy hiệu <span class="badge badge-secondary">New</span> <br/>
+                    <code>progress</code> tiến độ<br/>
+                    <code>pagination</code> nhiều trang<br/>
+                    <code>breadcrumb</code> phân trang<br/>
+                    <code>list-group</code> nhóm danh sách<br/>
+                    <code>card</code> thẻ<br/>
+                    <code>card-columns</code> cốt thẻ
+                    <code>dropdown</code> trình thả xuống<br/>
+                    <code>dropdown-menu</code>trình con<br/>
+                    <code>dropdown-divider</code> liên kết riêng biệt<br/>
+                    <code>dropdowm-header</code> tiêu đề trong trình thả xuống<br/>
+                    <code>collapse</code> thu gọn<br/>
+                    <code>accordion</code> mở rộng thành phần thẻ<br/>
+                    <code>nav</code> menu<br/>
+                    <code>navbar</code> thanh điều hướng<br/>
+                    <code>form-group</code> tạo khung form<br/>
+                    <code>form-control</code> căn chiều rộng cho input<br/>
+                    <code>form-check</code> tạo khung đánh dấu<br/>
+                    <code>form-inline</code> cùng hàng<br/>
+                    <code>input-groub-prepend</code> thêm biểu tượng<br/>
+                    <code>custom-checkbox</code> tạo hộp checkbox<br/>
+                    <code>custom-select</code> tạo menu tùy chọn<br/>
+                    <code>custom-range</code> tạo khung tùy chọn kéo<br/>
+                    <code>custom-file</code> khung chọn file<br/>
+                    <code>carousel</code> tạo slide<br/>
+                    <code>modal</code> hộp thoại<br/>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Example (ví dụ)</h1>
+            <div class="col-md-10 mx-auto">
+                <div class="col-md-6 float-left">
+                    <h1>table</h1>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                    <td>John</td>
+                                    <td>Doe</td>
+                                    <td>john@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Mary</td>
+                                    <td>Moe</td>
+                                    <td>mary@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>July</td>
+                                    <td>Dooley</td>
+                                    <td>july@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>            
+                    </div>
+                    <h1>jumbotron</h1>
+                    <div class="jumbotron">
+                        <h1>Bootstrap Tutorial</h1>      
+                        <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
+                    </div>
+                    <h1>alert</h1>
+                    <div class="alert alert-success alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong> Indicates a successful or positive action.
+                    </div>
+                    <h1>list-group</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-item-center">
+                            inbox
+                            <span class="badge badge-primary badge-pill">12</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-item-center">
+                            Ads
+                            <span class="badge badge-primary badge-pill">50</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-item-center">
+                            Junk
+                            <span class="badge badge-primary badge-pill">99</span>
+                        </li>
+                    </ul>
+                    <h1>dropdown</h1>
+                    <div class="dropdown dropright">
+                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            dropdown button
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="" class="dropdown-item">link 1</a>
+                            <div class="dropdown-header">header 1</div>
+                            <a href="" class="dropdown-item">link 2</a>
+                            <a href="" class="dropdown-item">link 3</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="" class="dropdown-item">another link</a>
+                        </div>
+                    </div>
+                    <h1>collapse</h1>
+                    <button type=button class="btn btn-primary" data-toggle="collapse" data-target="#demo">collapse</button>
+                    <div id="demo" class="collapse">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <h1>accordion</h1>
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                Collapsible Group Item #1
+                              </a>
+                            </div>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            Collapsible Group Item #2
+                        </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                        </div>
+                        </div>
+                        <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            Collapsible Group Item #3
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <h1>nav</h1>
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active" data-toggle="tab">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#menu1" class="nav-link " data-toggle="tab">menu1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#menu2" class="nav-link " data-toggle="tab">menu2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#menu3" class="nav-link " data-toggle="tab">menu3</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane contain active" id="home">
+                            <h3>HOME</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="tab-pane container fade" id="menu1">
+                            <h3>menu1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="tab-pane container fade" id="menu2">
+                            <h3>menu2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="tab-pane container fade" id="menu3">
+                            <h3>menu3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <h1>input-group</h1>
+                    <form action="">
+                        <label for="demo">write email here:</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Email" id="demo" name="email">
+                            <div class="input-group-append">
+                                <span class="input-group-text">@example.com</span>
+                            </div>
+                        </div>
+                    </form>
+                    <h1>modal</h1>
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Open modal
+                    </button>
+                    <!-- The Modal -->
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Modal Heading</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Modal body..
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <h1>tooltip</h1>
+                    <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+                    <script>
+                    $(document).ready(function(){
+                        $('[data-toggle="tooltip"]').tooltip();   
+                    });
+                    </script>
+                    <h1>popover</h1>
+                    <a  data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>
+                    <script>
+                    $(document).ready(function(){
+                        $('[data-toggle="popover"]').popover();   
+                    });
+                    </script>
+                    <h1>scrollspy</h1>
+                    <style>
+                        scro {
+                            position: relative; 
+                        }
+                    </style>
+                    <div class="scro" data-spy="scroll" data-target=".navbar" data-offset="50">
+                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">  
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section1">Section 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section2">Section 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section3">Section 3</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Section 4
+                                    </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#section41">Link 1</a>
+                                    <a class="dropdown-item" href="#section42">Link 2</a>
+                                </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+                            <h1>Section 1</h1>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                        </div>
+                        <div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+                            <h1>Section 2</h1>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                        </div>
+                        <div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+                            <h1>Section 3</h1>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                        </div>
+                        <div id="section41" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+                            <h1>Section 4 Submenu 1</h1>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                        </div>
+                        <div id="section42" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+                            <h1>Section 4 Submenu 2</h1>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 float-left">
+                    <h1>img</h1>
+                    <img src="bk.jpg" class="rounded-circle" alt="">
+                    <h1>button</h1>
+                    <button type="button" class="btn btn-primary">primary</button>
+                    <h1>button group</h1>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">apple</button>
+                        <button type="button" class="btn btn-primary">samsung</button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                sony
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="" class="dropdown-item">tablet</a>
+                                <a href="" class="dropdown-item">smartphone</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>progress</h1>
+                    <div class="progress">
+                        <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" style="width: 70%">
+                            70%
+                        </div>
+                    </div>
+                    <h1>pagination</h1>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"> <a href="" class="page-link">Previous</a></li>
+                        <li class="page-item"> <a href="" class="page-link">1</a></li>
+                        <li class="page-item active"> <a href="" class="page-link">2</a></li>
+                        <li class="page-item"> <a href="" class="page-link">3</a></li>
+                        <li class="page-item"> <a href="" class="page-link">Next</a></li>
+                    </ul>
+                    <h1>breadcrumb</h1>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">photo</li>
+                        <li class="breadcrumb-item">sumner</li>
+                        <li class="breadcrumb-item">Italy</li>
+                    </ul>
+                    <h1>card</h1>
+                    <div class="card" style="width: 400px;">
+                        <img class="card-img-top" alt="card image" src="img_avatar1.png" style="width: 100%">
+                        <div class="card body">
+                            <h4 class="card-title">Binh Nguyen</h4>
+                            <p class="card-text">some example text</p>
+                            <a href="#" class="btn btn-primary">see detail</a>
+                        </div>
+                    </div>
+                    <h1>navbar</h1>
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+                        <a href="#" class="navbar-brand">
+                            <img src="bk.jpg" alt="logo" style="width: 40px;">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a href="#" class="nav-link">Home</a>
+                                </li>
+                            </ul>
+                            <form class="form-inline" action="/action_page.php">
+                                <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                                <button class="btn btn-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <h1>form group</h1>
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="enter email" name="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                        </div>
+                        <div class="form-group form-check custom-control custom-checkbox">
+                            <input class="form-check-input custom-control-input" id="customCheck" type="checkbox" name="remember">
+                            <label class="form-check-label custom-control-label" for="customCheck">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <div class="form-group">
+                        <label for="sel1">select list:</label>
+                        <select name="" id="sel1" class="form-control">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </div>
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <input type="range" class="form-control-range custom-range" id="customRange" name="range">
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <h1>Carousel</h1>
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="la.jpg" alt="Los Angeles" width="100%" height="200">
+                            <div class="carousel-caption">
+                                <h3>Los Angeles</h3>
+                                <p>We had such a great time in LA!</p>
+                            </div>   
+                            </div>
+                            <div class="carousel-item">
+                            <img src="chicago.jpg" alt="Chicago" width="100%" height="200">
+                            <div class="carousel-caption">
+                                <h3>Chicago</h3>
+                                <p>Thank you, Chicago!</p>
+                            </div>   
+                            </div>
+                            <div class="carousel-item">
+                            <img src="ny.jpg" alt="New York" width="100%" height="200">
+                            <div class="carousel-caption">
+                                <h3>New York</h3>
+                                <p>We love the Big Apple!</p>
+                            </div>   
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                    <h1>media</h1>
+                    <div class="media border p-3">
+                        <img src="bk.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                        <div class="media-body">
+                            <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="media p-3">
+                            <img src="Bóng-ma-danh-vọng.jpg" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+                            <div class="media-body">
+                                <h4>Jane Doe <small><i>Posted on February 20 2016</i></small></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <h1>search everything</h1>
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <div id="myDIV" class="mt-3">
+                        <p>I am a paragraph.</p>
+                        <div>I am a div element inside div.</div>
+                        <button class="btn">I am a button</button>
+                        <button class="btn btn-info">Another button</button>
+                        <p>Another paragraph.</p>
+                    </div>
+                    <script>
+                        $(document).ready(function(){
+                            $("#myInput").on("keyup", function() {
+                            var value = $(this).val().toLowerCase();
+                            $("#myDIV *").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
+                            });
+                        });
+                    </script>
+                    <h1>google map</h1>
+                    <div id="googleMap" style="width:100%;height:400px;"></div>
+                    <script>
+                        function myMap(){
+                            var mapProp= {
+                                center:new google.maps.LatLng(16.4529432,107.5831963),
+                                zoom:10,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            };
+                            var map = new google.maps.Map(document.getElementById('googleMap'),mapProp);
+                        }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZFk8zFprtvrDY4zxooq8S0siynpERD7A&callback=myMap"></script>
+                    <h1>canvas</h1>
+                    <canvas id="canvas" width="400" height="400"
+                        style="background-color:#333">
+                    </canvas>
+                    <script>
+                        var canvas = document.getElementById("canvas");
+                        var ctx = canvas.getContext("2d");
+                        var radius = canvas.height / 2;
+                        ctx.translate(radius, radius);
+                        radius = radius * 0.90
+                        setInterval(drawClock, 1000);
+
+                        function drawClock() {
+                            drawFace(ctx, radius);
+                            drawNumbers(ctx, radius);
+                            drawTime(ctx, radius);
+                        }
+
+                        function drawFace(ctx, radius) {
+                            var grad;
+                            ctx.beginPath();
+                            ctx.arc(0, 0, radius, 0, 2*Math.PI);
+                            ctx.fillStyle = 'white';
+                            ctx.fill();
+                            grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+                            grad.addColorStop(0, '#333');
+                            grad.addColorStop(0.5, 'white');
+                            grad.addColorStop(1, '#333');
+                            ctx.strokeStyle = grad;
+                            ctx.lineWidth = radius*0.1;
+                            ctx.stroke();
+                            ctx.beginPath();
+                            ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+                            ctx.fillStyle = '#333';
+                            ctx.fill();
+                        }
+
+                        function drawNumbers(ctx, radius){
+                            var ang;
+                            var num;
+                            ctx.font = radius*0.15 + "px arial";
+                            ctx.textBaseline = "middle";
+                            ctx.textAlign = "center";
+                            for(num = 1; num <13; num++){
+                                ang = num * Math.PI / 6;
+                                ctx.rotate(ang);
+                                ctx.translate(0, -radius*0.85);
+                                ctx.rotate(-ang);
+                                ctx.fillText(num.toString(), 0, 0);
+                                ctx.rotate(ang);
+                                ctx.translate(0, radius*0.85);
+                                ctx.rotate(-ang);
+                            }
+                        }
+                        
+                        function drawTime(ctx, radius){
+                            var now = new Date();
+                            var hour = now.getHours();
+                            var minute = now.getMinutes();
+                            var second = now.getSeconds();
+                            //hour
+                            hour = hour%12;
+                            hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+                            drawHand(ctx, hour, radius*0.5, radius*0.07);
+                            // minute
+                            minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+                            drawHand(ctx, minute, radius*0.8, radius*0.07);
+                            //second
+                            second = (second*Math.PI/30);
+                            drawHand(ctx ,second, radius*0.9, radius*0.02);
+                        }
+
+                        function drawHand(ctx, pos, length, width){
+                            ctx.beginPath();
+                            ctx.lineWidth = width;
+                            ctx.lineCap = "round";
+                            ctx.moveTo(0,0);
+                            ctx.rotate(pos);
+                            ctx.lineTo(0, -length);
+                            ctx.stroke();
+                            ctx.rotate(-pos);
+                        }
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

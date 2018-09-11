@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Learn_HTML</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>HTML (khái niệm)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <pre>
+                    html5 ra mắt vào 28 tháng 10 năm 2014.
+                    bản update mới nhất HTML5.2 14 tháng 12 năm 2017.
+                    html viết tắt Hyper text markup language (ngôn ngữ đánh dấu siêu văn bản)
+                    cha đẻ Tim Berners-Lee (khai sinh WWW chuẩn W3C)
+                    dùng để mô tả cấu trúc của 1 trang web
+                    được biểu diễn bằng các cặp thẻ bắt đầu và kết thúc
+                    ngoài ra còn có thẻ  khuyết (quick closetag)
+                    mỗi thẻ có mỗi thuộc tính (attribute) riêng
+                    mỗi thẻ chỉ chấp nhậ 1 số thuộc tính nhất định
+                    thuộc tính cung cấp thông tin bổ sung cho thẻ
+                    ngôn ngữ tài liệu quan trong với trình đọc màn hình và tìm kiếm
+                    công cụ tìm kiếm dùng các tiêu đề chỉ mục cấu trúc và nội dung trang
+                    responsive dùng để thay đổi kích thước phù hợp với từng kích thước màn hình
+                    layout html5: <img src="img_sem_elements.gif" alt="">
+                </pre>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Elements (Thẻ)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <code>!DOCTYPE html</code> xác định là tài liệu html 5<br/>  
+                    <code>html</code> phần tử gốc html<br/>
+                    <code>head</code> chứa thông tin <code>meta</code> và <code>title</code><br/>
+                    <code>title</code> chứa tiêu đề cho tài liệu<br/>
+                    <code>link</code> lấy tài liệu bên ngoài<br/>
+                    <code>body</code> chứa nội dung hiển thị<br/>
+                    <code>h1</code> tiêu đề<br/>
+                    <code>p</code> đoạn văn bản<br/>
+                    <code>a</code> <a href="#">liên kết link</a><br/>
+                    <code>ul</code> danh sách<br/>
+                    <code>li</code> các mục trong danh sách<br/>
+                    <code>ol</code> danh sách được đánh số<br/>
+                    <code>q</code> <q>thông báo</q><br/>  
+                    <code>blockquote</code> <blockquote style="font-size: 15px">trích từ nguồn khác</blockquote>
+                    <code>abbr</code> <abbr title="từ viết tắt">tvt</abbr><br/>
+                    <code>address</code> thông tin liên hệ<br/>
+                    <code>cite</code> tiêu đề<br/>
+                    <code>bdo</code> <bdo dir="rtl"> chuyến hướng ký tự</bdo><br/>
+                    <code>table</code> định nghĩa bản<br/>
+                    <code>thead</code> đầu bảng<br/>
+                    <code>tbody</code> thân bảng<br/>
+                    <code>tfoot</code> đuôi bảng<br/>
+                    <code>tr</code> hàng<br/>
+                    <code>th</code> tiêu đề cột<br/>
+                    <code>td</code> cột<br/> 
+                    <code>caption</code> tên bảng<br/>
+                    <code>dl</code> danh sách mô tả<br/>
+                    <code>dt</code> các mục<br/>
+                    <code>dd</code> danh sách<br/>
+                    <code>section</code> main chứa nội dung chính<br/>
+                    <code>article</code> bài viết độc lập<br/>
+                    <code>aside</code> thanh bên chứa khung sidebar<br/>
+                    <code>samp</code> đầu ra của máy tính <samp>error!</samp><br/>
+                    <code>var</code> định nghĩa biến <var>E</var> = <var>mc</var><sup>2</sup><br/>
+                    <code>select</code> danh sách thả xuống<br/>
+                    <code>option</code> tùy chọn trong <code>select</code><br/>
+                    <code>textarea</code> nhập dòng văn bản<br/>
+                    <code>rows</code> xác định chiều cao<br/>
+                    <code>cols</code>xác định chiều rộng<br/>
+                    <code>svg</code> xác định đồ hoạc cho web<br/>
+                    <code>video</code> hiển thị video<br/>
+                    <code>audio</code> phát âm thanh<br/>
+                    <code>object</code> lấy đối tượng ngoài html<br/>
+                </div>
+                    <div class="col-md-6">
+                    <code>img</code> thêm hình ảnh <img src="bk.jpg" alt="picture" width="15px" height="15px"><br/>
+                    <code>picture</code> xử lý hình ảnh<br/>
+                    <code>source</code> chọn hình ảnh phù hợp với kích thước màn hình<br/>
+                    <code>button</code> nút <button>click</button><br/>
+                    <code>br</code> ngắt dòng<br/>
+                    <code>hr</code> tách nội dung bằng dấu gạch ngang <hr>
+                    <code>pre</code> hiển thị văn bản bao gồm khoảng trắng<br/>
+                    <code>b</code> <b>in đậm</b><br/>
+                    <code>i</code> <i>in nghiên</i><br/>
+                    <code>strong</code> <strong>quan trọng</strong><br/>
+                    <code>em</code> <em>nhấn mạnh</em><br/>
+                    <code>mark</code> <mark>đánh dấu</mark><br/>
+                    <code>small</code> <small>nhỏ</small><br/>
+                    <code>del</code> <del>xóa</del><br/>
+                    <code>ins</code> <ins>gạch dưới</ins><br/>
+                    <code>sup</code> <sup>lên trên</sup><br/>
+                    <code>sub</code> <sub>xuống dưới</sub><br/>
+                    <code>style</code> thẻ sét css trong <code>head</code><br/>
+                    <code>map</code> bản đồ hình ảnh để nhấp các biểu tượng trong ảnh<br/>
+                    <code>area</code> khu vực có thể click trong ảnh<br/>
+                    <code>div</code> tạo vùng chứa<br/>
+                    <code>span</code> chứa đoạn văn bản<br/>
+                    <code>iframe</code> chứa khung web nội tuyến<br/>
+                    <code>meta</code> chỉ định kiểu ký tự, mô tả trang tác giả từ khóa<br/>
+                    <code>script</code> viết code javascript<br/>
+                    <code>base</code> xác định url cơ sở<br/>
+                    <code>header</code> tiêu đề trang<br/>
+                    <code>nav</code> thanh điều hướng chứa menu<br/>
+                    <code>footer</code> chân trang<br/>
+                    <code>code</code> mã máy tính<br/>
+                    <code>kbd</code> nhập từ bàn <kbd>phím</kbd><br/>
+                    <code>form</code> biễu mẫu<br/>
+                    <code>input</code> thẻ ddiwwnf iểu mẫu<br/>
+                    <code>fieldset</code> nhóm dữ liệu trong 1 biểu mẫu<br/>
+                    <code>legend</code> chú thích cho phần tử trong <code>fieldset</code><br/>
+                    <code>datalist</code> danh sách tùy chọn<br/>
+                    <code>output</code> thực hiện phép tính và hiển thị kết quả<br/>
+                    <code>canvas</code>  vẽ đồ họa trên web<br/>
+                    <code>hgroup</code> tạo nhóm<br/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Attributes (thuộc tính)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <code>lang="en"</code> ngôn ngữ tài liệu, nằm trong <code>html</code><br/>
+                    <code>title="title"</code> <span title="chú thích">chủ thích từ, nằm trong <code>p, span, h</code></span><br/>
+                    <code>id="name"</code> tên id cho thẻ<br/>
+                    <code>class="number"</code> tên lớp cho thẻ<br/>
+                    <code>rel="stylesheet"</code> xác định mối quan hệ, nằm trong <code>link</code><br/>
+                    <code>shape="rect"</code> xác định hình dạng image, nằm trong <code>area</code><br/>
+                    <code>coords="34,44,270,350"</code> xác định tọa độ trong ảnh, nằm trong <code>area</code><br/>
+                    <code>media="(min-width: 650px)"</code> ảnh hợp kích thước, nằm trong <code>source</code><br/>
+                    <code>srcset="img_pink_flowers.jpg"</code> chứa địa chỉ ảnh, nằm trong <code>source</code><br/>
+                    <code>colspan="2"</code> cắt cột, nằm trong <code>th, td, tr</code></br/>
+                    <code>rowspan="2"</code> cắt hàng, nằm trong <code>th, td, tr</code></br/>
+                    <code>type="1"</code> điểm đánh dấu mục danh sách, nằm trong <code>ol</code><br/>
+                    <code>start="50"</code> điểm đánh dấu mục bắt đầu, nằm trong <code>ol</code><br/>
+                    <code>onclick="alert('hello')"</code> sử lý sự kiện khi click, nằm trong <code>button</code><br/>
+                    <code>list="browsers"</code> trỏ tới dữ liệu sẵn trong <code>datalist</code><br/>
+                    <code>for="a*b"</code> mối quan hệ kết quả phép tính, nằm trong <code>output</code> <br/>
+                    <code>min="1"</code> giá trị tối thiểu có thể nhập, nằm trong <code>input</code><br/>
+                    <code>readonly</code> chỉ đọc, nằm trong <code>input</code><br/>
+                    <code>disable</code> bị vô hiệu hóa, nằm trong <code>input</code><br/>
+                    <code>size="40"</code> kích thước tối đa cho ký tự, nằm trong <code>input</code><br/>
+                </div>
+                <div class="col-md-6">
+                    <code>href="http://..."</code> chứa địa chỉ liên kế, nằm trong <code>a</code><br/> 
+                    <code>src="D:/image/..."</code> địa chỉ tệp, nằm trong <code>image, iframe</code><br/>
+                    <code>alt="picture"</code> văn bản thay thế ảnh, nằm trong <code>image</code><br/>
+                    <code>width="20px"</code> chiều rộng, nằm trong <code>image, frame</code><br/>
+                    <code>height="30px"</code> chiều cao, nằm trong <code>image, frame</code><br/>
+                    <code>style="height: 10px"</code> tạo css<br/>
+                    <code>target="_blank"</code><a href="https://nguyenvanbinh3479.github.io/" target="_blank">link mở tap mới</a>, nằm trong <code>a, iframe</code><br/>
+                    <code>usemap="#workmap"</code> ảnh thuộc <code>map</code>, nằm trong <code>img</code><br/>
+                    <code>name="workmap"</code> tên thẻ, nằm trong <code>map, iframe, meta</code><br/>
+                    <code>charset="UTF-8"</code> xác định ký tự sử dụng nằm trong <code>meta</code><br/>
+                    <code>content="free web"</code> mô tả trang web nằm trong <code>meta</code><br/>
+                    <code>http-equiv</code> làm mới tài liệu nằm trong <code>meta</code><br/>
+                    <code>action="/action_page.php"</code> xử lý biểu mẫu nằm trong <code>form</code><br/>
+                    <code>method="get"</code> phương thức http nằm trong <code>form</code><br/>
+                    <code>selected</code> thành phần chọn trước nằm trong <code>option</code><br/>
+                    <code>size="2"</code> số giá trị hiển thị trong <code>select</code><br/>
+                    <code>multiple</code> chọn nhiều giá trị nằm trong <code>select</code><br/>
+                    <code>oninput="myFunction"</code> thay đổi khi giá trị thay đổi, nằm trong <code>form</code> <br/>
+                    <code>max="10"</code> giá trị tối đa có thể nhập, nằm trong <code>input</code><br/>
+                    <code>placeholder</code> gợi ý, nằm trong <code>input</code><br/>
+                    <code>autoplay</code> tự động phát<br/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Example (ví dụ)</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <h1>nhảy theo dấu trang</h1>
+                    <a href="#C4">Jump to Chapter 4</a>
+                    <h6>Chapter 2</h6>
+                    <h6>Chapter 3</h6>
+                    <h6 id="C4">Chapter 4</h6>
+                    <h6>Chapter 5</h6>
+                    <h6>Chapter 6</h6>
+                    <h1>ảnh thay đổi theo kich thước màn hình</h1>
+                    <picture>
+                        <source media="(min-width:650px)" srcset="https://www.w3schools.com/html/img_pink_flowers.jpg">
+                        <source media="(min-width:465px)" srcset="https://www.w3schools.com/html/img_white_flower.jpg">
+                        <img src="https://www.w3schools.com/html/img_orange_flowers.jpg" alt="pic">
+                    </picture>
+                </div>
+                <div class="col-md-6">
+                    <h1>link biểu tượng trong ảnh</h1>
+                    <img src="https://www.w3schools.com/html/workplace.jpg" alt="workplace" usemap="#workmap">
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="computer" href="https://www.w3schools.com/html/computer.htm" target="_blank">
+                        <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.w3schools.com/html/phone.htm" target="_blank">
+                        <area shape="circle" coords="337,300,44" alt="Coffee" href="https://www.w3schools.com/html/coffee.htm" target="_blank">
+                    </map>
+                    <h1>danh sách thả xuống</h1>
+                    <select name="card" id="">
+                        <option value="ferari">ferari</option>
+                        <option value="suzuki">suzuki</option>
+                        <option value="honda">honda</option>
+                        <option value="zamaha">zamaha</option>
+                    </select>
+                    <h1>danh sách tùy chọn</h1>
+                    <form action="">
+                        <input list="browsers">
+                        <datalist id="browsers">
+                            <option value="internet"/>
+                            <option value="chrome"/>
+                            <option value="firefox"/>
+                            <option value="safari"/>
+                        </datalist>
+                        <input type="submit">
+                    </form>
+                    <h1>thực hiện phép tính bằng scroll</h1>
+                    <form action="/action_page.php"
+                        oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                        0
+                        <input style="width:100px; float: left;" type="range"  id="a" name="a" value="50">
+                        100 +
+                        <input type="number" id="b" name="b" value="50">
+                        =
+                        <output name="x" for="a b"></output>
+                        <br><br>
+                        <input type="submit">
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
