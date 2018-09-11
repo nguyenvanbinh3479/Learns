@@ -60,6 +60,11 @@
                     <code>.reduce</code> chạy hàm trên mỗi phần tử tạo ra giá trị đơn<br/>
                     <code>.every</code> kiểm tra xem tất cả các phần tử trong mảng nó có thỏa function<br/>
                     <code>.some</code> kiểm tra xem một vài các phần tử trong mảng nó có thỏa function<br/>
+                    <code>Math.PI</code> tr/ả về số PI<br/>
+                    <code>Math.round(4.7)</code> làm tròn 1 số<br/>
+                    <code>Math.pow(8,2)</code> mủ 1 số<br/>
+                    <code>Math.sqrt(64)</code> căn bậc hai 1 số<br/>
+                    <code>Math.random()</code> số ngẫu nhiên trong khoảng 0 -1 <br/>
 
                 </div>
                 <div class="col-md-6">
@@ -87,6 +92,7 @@
                     <code>.sort()</code> sắp xếp 1 mảng<br/>
                     <code>.reverse()</code> đảo ngược mảng<br/>
                     <code>.gettime()</code> trả về mili giây<br>
+                    <code>boolean()</code> trả về true hoặc false<br/>
 
                 </div>
             </div>
@@ -182,7 +188,20 @@
                             document.getElementById('gtime').innerHTML = gtime.getTime();
                         </script>
                     </div>
-                    
+                    <h1>so sánh</h1>
+                    <div>
+                        <input type="text" id="age" value="18">
+                        <button onclick="myff()">try</button>
+                        <p id="ss"></p>
+                        <script>
+                            function myff(){
+                                var age, vote;
+                                age = document.getElementById('age').value;
+                                vote = (age < 18) ? "Too young":"Old enough";
+                                document.getElementById('ss').innerHTML = vote + " to vote.";
+                            }
+                        </script>
+                    </div>
                     
                 </div>
                 <div class="col-md-6">
@@ -270,7 +289,74 @@
                             document.getElementById("dt").innerHTML = person.firstName + " is " + person.age + " years old.";
                         </script>
                     </div>
+                    <h1>Số ngâu nhiên</h1>
+                    <div>
+                        <button onclick="document.getElementById('atnum').innerHTML = aTNum(0,100)">click</button>
+                        <p id="atnum"></p>
+                        <script>
+                            function aTNum(min, max){
+                                return Math.floor(Math.random() * (max - min)) + min;
+                            } 
+                        </script>
+                    </div>
+                    <h1>if loop</h1>
+                    <div>
+                        <p id="gd"></p>
+                        <script>
+                            if (new Date().getHours() < 14){
+                                document.getElementById('gd').innerHTML = "good day";
+                            }else{
+                                document.getElementById('gd').innerHTML = "good night";
+                            }
+                        </script>
+                    </div>
+                    <h1>switch</h1>
+                    <div>
+                        <p id="sw"></p>
+                        <script>
+                            var day;
+                            switch (new Date().getDay()){
+                                case 0:
+                                day = "sunday";
+                                break;
+                                case 1:
+                                day = "Monday";
+                                break;
+                                case 2:
+                                day = "tuesday";
+                                break;
+                                case 3:
+                                day = "wednesday";
+                                break;
+                                case 4:
+                                day = "thursday";
+                                break;
+                                case 5:
+                                day = "friday";
+                                break;
+                                case 6:
+                                day = "saturday";
+                                break;
+                                default: 
+                                text = "looking forward to the weekend";
 
+                            }
+                            document.getElementById('sw').innerHTML = "today is " + day;
+                        </script>
+                    </div>
+                    <h1>for loop</h1>
+                    <div>
+                        <p id="for"></p>
+                        <script>
+                            var car = ["bmw", "volvo", "saab", "ford", "fiat", "audi"];
+                            var text = "";
+                            var i;
+                            for (i = 0; i < car.length; i++){
+                                text = text + car[i] + "<br>";
+                            } 
+                            document.getElementById('for').innerHTML = text;
+                        </script>
+                    </div>
 
                 </div>
             </div>
