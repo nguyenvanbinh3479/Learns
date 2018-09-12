@@ -32,6 +32,9 @@
                     các số javascript lưu dưới dạng dấu chấm động chính xác gấp đôi
                     khác đối tượng không thể so sánh
                     mảng được đánh số còn đối tượng có tên
+                    câu lệnh break để nhảy ra khỏi vòng lặp
+                    javascript có 2 laoij phạm vi cục bộ và toàn cầu (Local, Global)
+                    biến cục bộ sẽ bị xóa khi hàm chạy xong
                 </pre>
             </div>
         </div>
@@ -65,6 +68,7 @@
                     <code>Math.pow(8,2)</code> mủ 1 số<br/>
                     <code>Math.sqrt(64)</code> căn bậc hai 1 số<br/>
                     <code>Math.random()</code> số ngẫu nhiên trong khoảng 0 -1 <br/>
+                    <code>"use strict"</code> chế độ nghiêm ngặt kiểm tra lỗi<br/>
 
                 </div>
                 <div class="col-md-6">
@@ -93,6 +97,13 @@
                     <code>.reverse()</code> đảo ngược mảng<br/>
                     <code>.gettime()</code> trả về mili giây<br>
                     <code>boolean()</code> trả về true hoặc false<br/>
+                    <code>constructor</code> kiểm tra đối tượng<br/>
+                    <code>Number</code> chuyển đổi chuỗi thành số<br/>
+                    <code>.serch()</code> tìm kiếm 1 chuỗi<br/>
+                    <code>.replace("","")</code> thay thế 1 chuỗi<br/>
+                    <code>.test()</code> tìm kiếm 1 chuỗi<br/>
+
+                    
 
                 </div>
             </div>
@@ -202,6 +213,151 @@
                             }
                         </script>
                     </div>
+                    <h1>break, continue</h1>
+                    <div>
+                        <p id="bre"></p>
+                        <script>
+                            var text = "";
+                            var i;
+                            for(i = 0; i < 10; i++ ){
+                                if(i == 3){continue;}
+                                text += "<br/> the number is " + i;
+                            }
+                            document.getElementById('bre').innerHTML = text;
+                        </script>
+                        
+                        <p id="brelist"></p>
+                        <script>
+                            var cars = ["bmw", "volvo", "saab", "ford"];
+                            var text = "";
+                            list:{
+                                text += cars[0] + "<br>";
+                                text += cars[1] + "<br>";
+                                break list;
+                                text += cars[2] + "<br>";
+                                text += cars[3] + "<br>";
+                            }
+                            document.getElementById('brelist').innerHTML = text;
+                        </script>
+                    </div>
+                    <h1>contructor kiểm tra mảng</h1>
+                    <div>
+                        <p id="isarr"></p>
+                        <script>
+                            var fruits = ["banana", "orange", "apple", "mango"];
+                            document.getElementById('isarr').innerHTML = isArray(fruits);
+                            function isArray(myArray){
+                                return myArray.constructor.toString().indexOf("Array") > - 1;
+                            }
+                        </script>
+                    </div>
+                    <h1>dịch chuyển trái số</h1>
+                    <div>
+                        <p id="tra"></p>
+                        <script>
+                            document.getElementById('tra').innerHTML = 5 >>> 1;
+                        </script>
+                    </div>
+                    <h1>chuyển nhị phân sang thập phân</h1>
+                    <div>
+                        <p id="nptp"></p>
+                        <script>
+                            document.getElementById('nptp').innerHTML = func(101);
+                            function func(bin){
+                                return parseInt(bin, 2).toString(10);
+                            }
+                        </script>
+                    </div>
+                    <h1>tìm kiếm chuỗi</h1>
+                    <div>
+                        <p id="ser"></p>
+                        <script>
+                            var str = "visit binh house";
+                            var n = str.search("binh");
+                            document.getElementById('ser').innerHTML = n;
+                        </script>
+                    </div>
+                    <h1>thay thế 1 chuỗi</h1>
+                    <div>
+                        <p id="rep"></p>
+                        <script>
+                            var str = "hello smith";
+                            var rp = str.replace(/smith/i, "binh");
+                            document.getElementById('rep').innerHTML = rp;
+                        </script>
+                    </div>
+                    <h1>tìm kiếm ký tự trong chuỗi</h1>
+                    <div>
+                        <p id="tst">hello momy</p>
+                        <p id="rte"></p>
+                        <script>
+                            text = document.getElementById('tst').innerHTML;
+                            document.getElementById('rte').innerHTML = /e/.test(text);
+                        </script>
+                    </div>
+                    <h1>try catch</h1>
+                    <div>
+                        <p id="trc"></p>
+                        <script>
+                            try{
+                                addlert("wellcome");
+                            }
+                            catch(err){
+                                document.getElementById('trc').innerHTML = err.message;
+                            }
+                        </script>
+                    </div>
+                    <h1>try catch , throw</h1>
+                    <div>
+                        <input type="text" id="dem">
+                        <button type="button" onclick="myFun()">test input</button>
+                        <p id="ptq"></p>
+                        <script>
+                            function myFun(){
+                                var message, x;
+                                message = document.getElementById("ptq");
+                                message.innerHTML = "";
+                                x = document.getElementById('dem').value;
+                                try{
+                                    if(x == "") throw "empty";
+                                    if(isNaN(x)) throw "not a number";
+                                    x = Number(x);
+                                    if(x < 5) throw "too low";
+                                    if(x > 10) throw "too high";
+                                }
+                                catch(err){
+                                    message.innerHTML = "input is " + err; 
+                                }
+                            }
+                        </script>
+                    </div>
+                    <h1>biến cục bộ</h1>
+                    <div>
+                        <p id="dm1"></p>
+                        <p id="dm2"></p>
+                        <script>
+                            myF();
+                            function myF(){
+                                var carName = "volvo";
+                                document.getElementById('dm1').innerHTML = typeof carName + " " + carName;
+                            }
+                            document.getElementById('dm2').innerHTML = typeof carName;
+                        </script>
+                    </div>
+                    <h1>biến toàn cục</h1>
+                    <div>
+                        <p id="dm"></p>
+                        <script>
+                            var carName = "volvo";
+                            myFs();
+                            function myFs(){
+                                document.getElementById('dm').innerHTML = "i can display " + carName;
+                            }
+                        </script>
+                    </div>
+
+
+
                     
                 </div>
                 <div class="col-md-6">
@@ -357,6 +513,65 @@
                             document.getElementById('for').innerHTML = text;
                         </script>
                     </div>
+                    <h1>for in</h1>
+                    <div>
+                        <p id="fin"></p>
+                        <script>
+                            var txt = ""
+                            var person = {fname:"john", lname:"smith", age:20}
+                            var x;
+                            for(x in person){
+                                txt += person[x] + " ";
+                            }
+                            document.getElementById('fin').innerHTML = txt;
+                        </script>
+                        <p id="for2"></p>
+                        <script>
+                            var cars = ["bwm", "volvo", "saab", "ford"];
+                            var i = 0;
+                            var text = "";
+                            for (;cars[i];){
+                                text += cars[i] + "<br>";
+                                i++;
+                            }
+                            document.getElementById('for2').innerHTML = text;
+                        </script>
+                    </div>
+                    <h1>While loop</h1>
+                    <div>
+                        <p id="while"></p>
+                        <script>
+                            var text = " ";
+                            var i = 0;
+                            while(i < 10){
+                                text += "<br/>the number is " + i;
+                                i++;
+                            }
+                            document.getElementById('while').innerHTML = text;
+                        </script>
+                    </div>
+                    <h1>do while</h1>
+                    <div>
+                        <p id="dow"></p>
+                        <script>
+                            var text = "";
+                            var i =0;
+                            do{
+                                text += "<br> the number is " + i;
+                                i++;
+                            }
+                            while(i < 10);
+                            document.getElementById('dow').innerHTML = text;
+                        </script>
+                    </div>
+                    <h1>use strict</h1>
+                    <script>
+                        "use strict";
+                        var public = 1500;
+                    </script>
+
+
+
 
                 </div>
             </div>
