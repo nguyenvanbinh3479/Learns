@@ -20,21 +20,27 @@
             <h1>HTML (khái niệm)</h1>
             <div class="col-md-10 col-md-offset-1">
                 <pre>
+                    ECMAScript 2015 hỗ trợ 1 phần trong tất cả trình duyệt
                     JavaScript là một ngôn ngữ lập trình của HTML và WEB
                     code javascript phải để trong thẻ script
                     javascript có 2 kiểu giá trị: cố định và biến
                     biến dùng để lưu trữ giá trị
                     sử dụng từ khóa var để khai báo biến
                     javascript phân biệt chữ hoa chữ thường
-                    javascript có 3 lạo dữ liệu: số chuỗi và đối tượng
-                    undefined và null có giá trịn bằng nhau nhưng khác nhau về loại
+                    javascript có 3 loại dữ liệu: số chuỗi và đối tượng
+                    undefined và null có giá trị bằng nhau nhưng khác nhau về loại
                     biến cục bộ được khai báo trục tiếp trong hàm
                     các số javascript lưu dưới dạng dấu chấm động chính xác gấp đôi
-                    khác đối tượng không thể so sánh
+                    các đối tượng không thể so sánh
                     mảng được đánh số còn đối tượng có tên
                     câu lệnh break để nhảy ra khỏi vòng lặp
-                    javascript có 2 laoij phạm vi cục bộ và toàn cầu (Local, Global)
+                    javascript có 2 loại phạm vi cục bộ và toàn cầu (Local, Global)
                     biến cục bộ sẽ bị xóa khi hàm chạy xong
+                    this chỉ sở hữu của hàm
+                    let dùng để khai báo 1 biến bên trong khối không bị redeclare
+                    const hoạt động như let nhueng không thể gán lại
+                    json là 1 định dạng để lưu trữ và truyền tải dữ liệu
+                    JSON(Java Script Object Notation)
                 </pre>
             </div>
         </div>
@@ -102,6 +108,8 @@
                     <code>.serch()</code> tìm kiếm 1 chuỗi<br/>
                     <code>.replace("","")</code> thay thế 1 chuỗi<br/>
                     <code>.test()</code> tìm kiếm 1 chuỗi<br/>
+                    <code>console.log</code> tìm lỗi<br/>
+                    <code>debugger</code> có chuecs năng gỡ lỗi<br/>
 
                     
 
@@ -569,7 +577,35 @@
                         "use strict";
                         var public = 1500;
                     </script>
-
+                    <h1>this</h1>
+                    <div>
+                        <p id="thi"></p>
+                        <script>
+                            var person = {
+                                fname: "binh",
+                                lname: "nguyen",
+                                id: 45678,
+                                fullName: function(){
+                                    return this.fname + " " + this.lname;
+                                }
+                            }
+                            document.getElementById('thi').innerHTML = person.fullName();
+                        </script>
+                        <p id="call"></p>
+                        <script>
+                            var person1 = {
+                                fullName: function(){
+                                    return this.fname + " " + this.lname;
+                                }
+                            }
+                            var person2 = {
+                                fname: "nam",
+                                lname: "hoang"
+                            }
+                            var x = person1.fullName.call(person2);
+                            document.getElementById('call').innerHTML = x;
+                        </script>
+                    </div>
 
 
 
