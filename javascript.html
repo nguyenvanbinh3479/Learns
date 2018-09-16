@@ -41,6 +41,7 @@
                     const hoạt động như let nhueng không thể gán lại
                     json là 1 định dạng để lưu trữ và truyền tải dữ liệu
                     JSON(Java Script Object Notation)
+                    DOM(Document Object Model)
                 </pre>
             </div>
         </div>
@@ -75,6 +76,9 @@
                     <code>Math.sqrt(64)</code> căn bậc hai 1 số<br/>
                     <code>Math.random()</code> số ngẫu nhiên trong khoảng 0 -1 <br/>
                     <code>"use strict"</code> chế độ nghiêm ngặt kiểm tra lỗi<br/>
+                    <code>call()</code> phương thức call để gọi 1 phương thức với 1 đối tượng lấy đối số riêng biệt<br/>
+                    <code>apply()</code> nhận đối số trong 1 mảng<br/>
+                    <code>.querySelectorAll()</code> tìm các thành phần html bằng bộ chọn<br/>
 
                 </div>
                 <div class="col-md-6">
@@ -109,7 +113,8 @@
                     <code>.replace("","")</code> thay thế 1 chuỗi<br/>
                     <code>.test()</code> tìm kiếm 1 chuỗi<br/>
                     <code>console.log</code> tìm lỗi<br/>
-                    <code>debugger</code> có chuecs năng gỡ lỗi<br/>
+                    <code>debugger</code> có chức năng gỡ lỗi<br/>
+                    <code>.protopype</code> sẽ thêm thuộc tính vào hàm tạo<br/>
 
                     
 
@@ -363,7 +368,44 @@
                             }
                         </script>
                     </div>
-
+                    <h1>form</h1>
+                    <div>
+                        <script>
+                            function validate(){
+                                var x = document.forms["myform"]["fname"].value;
+                                if (x == ""){
+                                    alert("name must be filled out");
+                                    return false;
+                                }
+                            }
+                        </script>
+                        <form action="/action_page.php" name="myform" onsubmit="return validate()" method="POST">
+                            Name: <input type="text" name="fname">
+                            <input type="submit" value="submit">
+                        </form>
+                    </div>
+                    <h1>getter, setter</h1>
+                    <div>
+                        <p id="gt"></p>
+                        <p id="st"></p>
+                        <script>
+                            var person = {
+                                fname: "binh",
+                                lname: "nguyen",
+                                language: "en",
+                                gendel: "NO",
+                                get lang(){
+                                    return this.language;
+                                },
+                                set age(value){
+                                    this.gendel = value;
+                                }
+                            };
+                            person.gendel = "male";
+                            document.getElementById('st').innerHTML = person.gendel;
+                            document.getElementById('gt').innerHTML = person.lang;
+                        </script>
+                    </div>
 
 
                     
@@ -371,9 +413,9 @@
                 <div class="col-md-6">
                     <h2>bóng đèn</h2>
                     <div>
-                        <button type="button" onclick="document.getElementById('bul').src = 'pic_bulbon.gif'">on</button>
-                        <img id="bul" src="pic_bulboff.gif" alt="">
-                        <button type="button" onclick="document.getElementById('bul').src = 'pic_bulboff.gif'">off</button>
+                        <button type="button" onclick="document.getElementById('bul').src = 'img/pic_bulbon.gif'">on</button>
+                        <img id="bul" src="img/pic_bulboff.gif" alt="">
+                        <button type="button" onclick="document.getElementById('bul').src = 'img/pic_bulboff.gif'">off</button>
                     </div>
                     <h1>hàm javascript</h1>
                     <div>
@@ -606,8 +648,54 @@
                             document.getElementById('call').innerHTML = x;
                         </script>
                     </div>
+                    <h1>JSON</h1>
+                    <p id="js"></p>
+                    <script>
+                        var text = '{"employees":[' + 
+                            '{"fname":"john", "lname":"smith"},' + 
+                            '{"fname":"anna", "lname":"doe"},' + 
+                            '{"fname":"perte", "lname":"jones"}]}';
+                        obj = JSON.parse(text);
+                        document.getElementById("js").innerHTML = 
+                        obj.employees[0].fname + " " + obj.employees[0].lname;
 
-
+                    </script>
+                    <h1>form</h1>
+                    <div>
+                        <p>Please input a number between 1 and 10:</p>
+                        <input type="dee">
+                        <button type="button" onclick="mfun()">submit</button>
+                        <p id="deo"></p>
+                        <script>
+                            function mfun(){
+                                var x, text;
+                                x = document.getElementById('dee').value;
+                                if (isNaN(x) || x < 1 || x > 10){
+                                    text = "input not valid";
+                                }else{
+                                    text = "input ok"
+                                }
+                                document.getElementById('deo').innerHTML = text;
+                            }
+                        </script>
+                    </div>
+                    <h1>đối tượng đối số</h1>
+                    <div>
+                        <p id="doiso"></p>
+                        <script>
+                            function findmax(){
+                                var i;
+                                var max = -Infinity;
+                                for (i = 0; i < arguments.length; i++){
+                                    if (arguments[i] > max){
+                                        max = arguments[i];
+                                    }
+                                }
+                                return max;
+                            }
+                            document.getElementById('doiso').innerHTML = findmax(02, 9458, 847);
+                    </script>
+                    </div>
 
                 </div>
             </div>
