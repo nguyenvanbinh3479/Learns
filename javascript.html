@@ -44,6 +44,8 @@
                     DOM(Document Object Model)
                     onload kích hoạt khi người dùng vào hoặc rời trang
                     onload để kiểm tra trình duyệt và xử lý cookie 
+                    AJAX(Asynchronous JavaScript And XML)
+                    AJAX cập nhật trang mà không cần tải trang
                 </pre>
             </div>
         </div>
@@ -409,8 +411,49 @@
                             document.getElementById('gt').innerHTML = person.lang;
                         </script>
                     </div>
+                    <h1>AJAX Response</h1>
+                    <div>
+                        <p id="dmo"></p>
+                        <script>
+                            var xhttp, xmlDoc, txt, x, i;
+                            xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function(){
+                                if (this.readyState == 4 && this.status == 200){
+                                    xmlDoc = this.responseXML;
+                                    txt = '';
+                                    x = xmlDoc.getElementByTagName("ARTIST");
+                                    for (i = 0; i < x.length; i++){
+                                        txt =txt + x[i].chilNodes[0].nodeValue + "<br>";
+                                    }
+                                    document.getElementById('dmo').innerHTML = txt;
+                                }
+                            };
+                            xhttp.open("GET", "cd_catalog.xml", true);
+                            xhttp.send();
+                        </script>
+                    </div>
 
+                    <p>Suggestions: <span id="txtHint"></span></p> 
 
+                    <p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+                    
+                    <script>
+                    function showHint(str) {
+                      var xhttp;
+                      if (str.length == 0) { 
+                        document.getElementById("txtHint").innerHTML = "";
+                        return;
+                      }
+                      xhttp = new XMLHttpRequest();
+                      xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                          document.getElementById("txtHint").innerHTML = this.responseText;
+                        }
+                      };
+                      xhttp.open("GET", "gethint.php?q="+str, true);
+                      xhttp.send();   
+                    }
+                    </script>
                     
                 </div>
                 <div class="col-md-6">
@@ -652,17 +695,32 @@
                         </script>
                     </div>
                     <h1>JSON</h1>
-                    <p id="js"></p>
-                    <script>
-                        var text = '{"employees":[' + 
-                            '{"fname":"john", "lname":"smith"},' + 
-                            '{"fname":"anna", "lname":"doe"},' + 
-                            '{"fname":"perte", "lname":"jones"}]}';
-                        obj = JSON.parse(text);
-                        document.getElementById("js").innerHTML = 
-                        obj.employees[0].fname + " " + obj.employees[0].lname;
-
-                    </script>
+                    <div>
+                        <p id="js"></p>
+                        <script>
+                            var text = '{"employees":[' + 
+                                '{"fname":"john", "lname":"smith"},' + 
+                                '{"fname":"anna", "lname":"doe"},' + 
+                                '{"fname":"perte", "lname":"jones"}]}';
+                            obj = JSON.parse(text);
+                            document.getElementById("js").innerHTML = 
+                            obj.employees[0].fname + " " + obj.employees[0].lname;
+    
+                        </script>
+                        <p id="jsn"></p>
+                        <script>
+                            var xmlhttp = new XMLHttpRequest();
+                            xmlhttp.onreadystatechange = function(){
+                                if (this.readyState == 4 && this.status == 200){
+                                    var myObj = JSON.parse(this.responseText);
+                                    document.getElementById('jsn').innerHTML = myObj.name;
+                                }
+                            };
+                            xmlhttp.opne("GET", "json_demo.txt", true);
+                            xmlhttp.send();
+                        </script>
+                        
+                    </div>
                     <h1>form</h1>
                     <div>
                         <p>Please input a number between 1 and 10:</p>
@@ -700,9 +758,113 @@
                     </script>
                     </div>
 
+                    <h1>AJAX</h1>
+                        <div id="demo">
+                            <h2>The XMLHttpRequest Object</h2>
+                            <button type="button" onclick="loadDoc()">Change Content</button>
+                        </div>
+                        
+                        <script>
+                        function loadDoc() {
+                          var xhttp = new XMLHttpRequest();
+                          xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                              document.getElementById("demo").innerHTML =
+                              this.responseText;
+                            }
+                          };
+                          xhttp.open("GET", "ajax_info.txt", true);
+                          xhttp.send();
+                        }
+                        </script>
+                        
+
                 </div>
             </div>
             <div class="col-md-10 col-md-offset-1">
+            </div>
+        </div>
+        <div class="row">
+            <h1>Exercise</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6">
+                    <h1>menu</h1>
+                    <div>
+                        <style>
+                            #menu{
+                                max-width: 250px;
+                            }
+                            #menu ul{
+                                list-style-type: none;
+                            }
+                            #menu ul li{
+                                background: teal;
+                                padding: 10px 0px;
+                            }
+                            #menu ul li a{
+                                color: white;
+                                text-decoration: none;
+                                margin: 0px 5px;
+                            }
+                            #menu li .menu-chil{
+                                display: none;
+                                list-style-type: none;
+                                padding: 0;
+                            }
+                            #menu li .menu-chil li{
+                                background: rebeccapurple;
+                                margin: 0;
+                            }
+                        </style>
+                        <div id="menu">
+                            <ul class="menu">
+                                <li>
+                                    <a href="#menu">trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="#menu">sản phẩm</a>
+                                    <ul class="menu-chil"> 
+                                        <li><a href="#">Gạch cao cấp</a></li>
+                                        <li><a href="#">Gạch thủ công</a></li>
+                                        <li><a href="#">Gạch hoa văn</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#menu">tin tức</a>
+                                    <ul class="menu-chil">
+                                        <li><a href="#">Tin công nghệ</a></li>
+                                        <li><a href="#">Tin trong nước</a></li>
+                                        <li><a href="#">Tin thời sự</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#menu">dịch vụ</a>
+                                    <ul class="menu-chil">
+                                        <li><a href="#">Thiết kế web</a></li>
+                                        <li><a href="#">Quảng cáo web</a></li>
+                                        <li><a href="#">Thiết kế đồ họa</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                            var menu = document.querySelectorAll('.menu > li');
+                            for (var i = 0; i < menu.length; i++)
+                            {
+                                menu[i].addEventListener("click", function()
+                                {
+                                    var menuList = document.querySelectorAll('.menu > li > ul');
+                                    for (var j = 0; j < menuList.length; j++)
+                                    {
+                                        menuList[j].style.display = "none";
+                                    }
+                                    this.children[1].style.display = "block";
+                                });
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
             </div>
         </div>
     </div>
