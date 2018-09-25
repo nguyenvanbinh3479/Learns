@@ -864,7 +864,77 @@
                         </script>
                     </div>
                 </div>
-                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <h1>min-max</h1>
+                    <div>
+                        <script>
+                            var min = null;
+                            var max = null;
+                            var value = '';
+                            while (value != null)
+                            {
+                                value = prompt("nhap so");
+                                if (value != null)
+                                {
+                                    if (min == null){
+                                        min = value;
+                                        max = value;
+                                    }else{
+                                        if (min > value){
+                                            min = value;
+                                        }
+                                        if(max < value){
+                                            max = value; 
+                                        }
+                                    }
+                                }
+                            } 
+                            document.write("min la:" + min + " max la:"+ max);
+                        </script>
+                    </div>
+                    <h1>giải phương trình bậc nhất</h1>
+                    <div>
+                        <script>
+                            function ptbn(a,b){
+                                if (a ==0 && b ==0){
+                                    alert("phương trình vô số nghiệm");
+                                }
+                                else if (a != 0 && b == 0){
+                                    alert("phương trình có nghiệm x = 0");
+                                }
+                                else if (a ==0 && b != 0){
+                                    alert("phương trình vô nghiệm");
+                                }
+                                else{
+                                    alert("phương trình có nghiệm x = "+ (-b/a));
+                                }
+                            }
+                            ptbn(1,0);
+                        </script>
+                    </div>
+                    <h1>hiển thị từ 1 đến giá trị từ ô input</h1>
+                    <div>
+                        <script>
+                            function print_number(){
+                                var number = document.getElementById("number").value;
+
+                                number = parseInt(number);
+                                var html = '';
+                                for (var i = 1; i <= number; i++){
+                                    html += i + '<br/>';
+                                }
+                                document.getElementById("result").innerHTML = html;
+                            }
+                        </script>
+                        <form action="" method="GET">
+                            Nhập số: <input type="text" id="number" value="0">
+                            <input type="button" value="In kết quả" onclick="print_number()">
+                        </form>
+                        <div id="result">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
