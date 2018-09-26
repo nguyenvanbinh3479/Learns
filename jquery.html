@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  
+    <title>Learn_JQuery</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>JQuery (khái niệm)</h1>
+            <div class="col-md-10 mx-auto">
+<pre>
+    Jquery là thư viện được xây dựng từ javascript nhằm giúp coder xây dựng ứng dụng javascript dễ dàng hơn.
+
+    Các module chính mà của Jquery sử bao gồm.
+    Ajax - xử lý Ajax
+    Atributes - xử lý thuộc tính của dối tượng HTML
+    Effect - xử lý hiệu ứng
+    Event - xử lý sự kiện
+    Form - xử lý form
+    DOM - xử lý Data Object Model
+    Selector - xử lý luồng lách các đối tượng HTML
+</pre>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Phương thức</h1>
+            <div class="col-md-10 mx-auto">
+                <div class="col-md-6 float-left">
+                    <code>.hide()</code> ẩn<br/>
+                    <code>.toggle()</code> ẩn và hiện<br/>
+                    <code>.fadeIn()</code> hiện mờ dần <br/>
+                    <code>.fadeToggle()</code> ẩn hiện mờ dần <br/>
+                    <code>.fadeTo()</code> ẩn dừng lại<br/>
+                    <code>.stop()</code> dừng đoạn lệnh<br/>
+                    <code>.val()</code> trả về giá trị value<br/>
+                    <code>.attr()</code> lấy giá trị thuộc tính<br/>
+                    <code>.append()</code> chèn thêm nội dung sau tương tự .before()<br/>
+                    <code>.prepend()</code> chèn thêm nội dung trước tương tự .after()<br/>
+                </div>
+                <div class="col-md-6 float-left">
+                    <code>.show()</code> hiện<br/>
+                    <code>.dblclick()</code> đúp chuột<br/>
+                    <code>.mouseenter()</code> hover chuột<br/>
+                    <code>.fadeOut()</code> ẩn mờ dần<br/>
+                    <code>.sliderDow()</code> cuộn xuống<br/>
+                    <code>.slideUp()</code> cuộn lên<br/>
+                    <code>.slideToggle()</code> cuộn lên xuống<br/>
+                    <code>.remote()</code> xóa tất cả<br/>
+                    <code>.empty()</code> xóa phần tử con<br/>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h1>Example (ví dụ)</h1>
+            <div class="col-md-10 mx-auto">
+                <div class="col-md-6 float-left">
+                    <h1>click</h1>
+                    <div>
+                        <script>
+                            $(document).ready(function(){
+                                $(".p").click(function(){
+                                    $(this).hide();
+                                });
+                            });
+                        </script>
+                        <p class="p">click me</p>
+                        <p class="p">click me to</p>
+                        <p class="p">click me please</p>
+                    </div>
+                    <h1>hide-show</h1>
+                    <script>
+                        $(document).ready(function(){
+                            $("#hide").click(function(){
+                                $('.hideshow').hide(1000);
+                            });
+                            $('#show').click(function(){
+                                $('.hideshow').show(100);
+                            });
+                            $("#hs").click(function(){
+                                $('.hideshow').toggle(1000);
+                            });
+                        });
+                    </script>
+                    <p class="hideshow">If you click on the "Hide" button, I will disappear.</p>
+                    <button id="hide">hide</button>
+                    <button id="show">show</button>
+                    <button id="hs">hide and show</button>
+                    <h1>slide dow</h1>
+                    <script>
+                        $(document).ready(function(){
+                            $("#flip").click(function(){
+                                $("#panel").slideToggle('slow');
+                            });
+                            $('#stop').click(function(){
+                                $('#panel').stop();
+                            })
+                        });
+                    </script>
+                    <div>
+                        <button id="stop">stop</button>
+                        <div id="flip">
+                            click to slider dow
+                        </div>
+                        <div id="panel">
+                            Hello world
+                        </div>
+                    </div>
+                    <style>
+                        #flip{
+                            padding: 5px;
+                            text-align: center;
+                            background-color: #e5eecc;
+                            border: 1px solid #c3c3c3;
+                        }
+                        #panel{
+                            padding: 50px;
+                            display: none;
+                        }
+                    </style>
+                    <h1>Chaining</h1>
+                    <div>
+                        <script>
+                            $(document).ready(function(){
+                                $('#btt').click(function(){
+                                    $('#p1').slideUp(2000)
+                                        .css("color", "red")
+                                        .slideDown(2000);
+                                })
+                            })
+                        </script>
+                        <p id="p1"> JQuery is fun!</p>
+                        <button id="btt">click me</button>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 float-left">
+                   <h2>dblclick</h2>
+                   <div>
+                       <script>
+                           $(document).ready(function(){
+                               $('#fun').dblclick(function(){
+                                   $(this).hide();
+                               })
+                           })
+                       </script>
+                       <p id="fun">{{ name }}</p>
+                       <p>{{ age }}</p>
+                   </div>
+                   <h2>mouseenter</h2>
+                   <div>
+                       <script>
+                           $(document).ready(function(){
+                               $('#aa').mouseenter(function(){
+                                   alert("you entered name");
+                               })
+                           })
+                       </script>
+                       <p id="aa">{{ name }}</p>
+                       <p>{{ age }}</p>
+                   </div>
+                   <h2>mờ dần</h2>
+                    <div>
+                        <script>
+                            $(document).ready(function(){
+                                $(".btn1").click(function(){
+                                    $("#div1").fadeToggle();
+                                    $("#div2").fadeToggle("slow");
+                                    $("#div3").fadeToggle(3000);
+                                });
+                            });
+                        </script>
+                        <p>Demonstrate fadeIn() with different parameters.</p>
+
+                        <button class="btn1">Click to fade in boxes</button><br><br>
+                        
+                        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+                        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+                        <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+                    </div>
+
+                    <h1>animation</h1>
+                    <div>
+                            <script> 
+                            $(document).ready(function(){
+                                $(".btns").click(function(){
+                                    $(".ani").animate({
+                                        left: '250px',
+                                        opacity: '0.5',
+                                        height: '150px',
+                                        width: '150px'
+                                    });
+                                    var div = $(".ani2");
+                                    div.animate({fontSize: '2em'}, "slow");
+                                    div.animate({height: '300px', opacity: '0.4'}, "slow");
+                                    div.animate({width: '300px', opacity: '0.8'}, "slow");
+                                    div.animate({height: '100px', opacity: '0.4'}, "slow");
+                                    div.animate({width: '100px', opacity: '0.8'}, "slow");
+                                });
+                            });
+                            </script>
+                        <button class="btns">start</button>
+                        <div class="ani" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+                        <div class="ani2" style="background:#98bf21;height:100px;width:100px;position:absolute;">HELLO</div>
+
+                    </div>
+                    <h1>ajax</h1>
+                    <div>
+                        <script>
+                            $(document).ready(function(){
+                                $("button").click(function(){
+                                    $("#div1").load("demo_test.txt");
+                                });
+                            });
+                        </script>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

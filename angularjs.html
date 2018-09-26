@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  
+    <title>Learn_AngularJS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>AngularJS (khái niệm)</h1>
+            <div class="col-md-10 mx-auto">
+<pre>
+    Đây là một mã nguồn mở, 1 framwork cho các ứng dụng web. Được phát triển từ năm 2009, hiện tại được duy trì bởi 
+    google và đã ra mắt phiên bản 2.0 AngularJS là một framework có cấu trúc cho các ứng dụng web động. Nó cho phép 
+    bạn sử dụng HTML như là ngôn ngữ mẫu và cho phép bạn mở rộng cú pháp của HTML để diễn đạt các thành phần ứng dụng 
+    của bạn một cách rõ ràng và súc tích. Hai tính năng cốt lõi: Data binding và Dependency injection của AngularJS 
+    loại bỏ phần lớn code mà bạn thường phải viết. Nó xảy ra trong tất cả các trình duyệt, làm cho nó trở thành đối 
+    tác lý tưởng của bất kỳ công nghệ Server nào.
+
+    ng-app : định nghĩa và liên kết một ứng dụng AngularJS tới HTML.
+    ng-model : gắn kết giá trị của dữ liệu ứng dụng AngularJS đến các điều khiển đầu vào HTML.
+    ng-bind : gắn kết dữ liệu ứng dụng AngularJS đến các thẻ HTML.
+
+    Cung cấp khả năng tạo ra các Single Page Aplication dễ dàng.
+    Cung cấp khả năng data binding tới HTML, khiến cho người dùng cảm giác linh hoạt, thân thiện.
+    Dễ dàng Unit test
+    Dễ dàng tái sử dụng component
+    Giúp lập trình viên viết code ít hơn với nhiều chức năng hơn.
+    Chạy được trên các loại trình duyệt, trên cả PC lẫn mobile.
+
+    Không an toàn : được phát triển từ javascript cho nên ứng dụng được viết bởi AngularJS không an toàn. Nên có sự 
+    bảo mật và xác thực phía server sẽ giúp ứng dụng trở nên an toàn hơn.
+    Nếu người sử dụng ứng dụng của vô hiệu hóa JavaScript thì sẽ chỉ nhìn thấy trang cơ bản.
+
+    Các biểu thức AngularJS được viết bên trong các dấu ngoặc kép: {{expression}} .
+</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <h1>Example (ví dụ)</h1>
+            <div class="col-md-10 mx-auto">
+                <div class="col-md-6 float-left">
+                    <h1>Example 1</h1>
+                    <div ng-app="" ng-init="fname='binhnguyen'">
+                        <p>the name is <span ng-bind="fname"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-6 float-left">
+                   <h2>Example 2</h2>
+                   <div ng-app="">
+                       <p>name: <input type="text" ng-model="name"></p>
+                       <p>{{name}}</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
