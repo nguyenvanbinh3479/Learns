@@ -19,6 +19,26 @@
             <div class="col-md-10 mx-auto">
 <pre>
     SQL là một ngôn ngữ chuẩn để lưu trữ, thao tác và lấy dữ liệu trong cơ sở dữ liệu.
+    
+    SQL là viết tắt của Structured Query Language
+    SQL cho phép bạn truy cập và thao tác cơ sở dữ liệu
+    SQL trở thành tiêu chuẩn của Viện Tiêu chuẩn Quốc gia Hoa Kỳ (ANSI) năm 1986 và của 
+    Tổ chức Tiêu chuẩn Quốc tế (ISO) năm 1987
+
+    SELECT - trích xuất dữ liệu từ cơ sở dữ liệu
+    UPDATE  - cập nhật dữ liệu trong cơ sở dữ liệu
+    DELETE - xóa dữ liệu khỏi cơ sở dữ liệu
+    INSERT INTO - chèn dữ liệu mới vào cơ sở dữ liệu
+    CREATE DATABASE - tạo cơ sở dữ liệu mới
+    ALTER DATABASE - sửa đổi cơ sở dữ liệu
+    CREATE TABLE  - tạo bảng mới
+    ALTER TABLE - sửa đổi một bảng
+    DROP TABLE - xóa bảng
+    CREATE INDEX - tạo chỉ mục (khóa tìm kiếm)
+    DROP INDEX - xóa chỉ mục
+
+    Toán tử AND hiển thị một bản ghi nếu tất cả các điều kiện được phân cách bởi AND là TRUE.
+    Toán tử OR hiển thị một bản ghi nếu bất kỳ điều kiện nào được phân tách bằng OR là TRUE.
 </pre>
             </div>
         </div>
@@ -26,10 +46,28 @@
             <h1>Class (đặt tên lớp)</h1>
             <div class="col-md-10 mx-auto">
                 <div class="col-md-6 float-left">
-                    <code>container</code> khung chính giữa<br/>
+                    <code>INSERT INTO</code> chèn dữ liệu vào cột<br/>
+                    <code>SELECT</code> chọn dữ liệu<br/>
+                    <code>DISTINCT</code> trả về giá trị khác bọt<br/>
+                    <code>WHERE</code> lọc bản ghi<br/>
+                    <code>ORDER BY</code> gom nhóm theo thứ tự tăng giảm<br/>
+                    <code>DELETE</code> xóa hàng<br/>
+                    <code>MIN, MAX</code> giá trị nho nhất, lớn nhất trong cột<br/>
+                    <code>AVG</code> trả về giá trị trung bình<br/>
+                    <code>SUM</code> trả về tổng<br/>
                 </div>
                 <div class="col-md-6 float-left">
-                    <code>jumbotron</code> tạo khung xám<br/>
+                    <code>UPDATE</code> sửa đổi dữ liệu trong cột<br/>
+                    <code>FROM</code> từ bảng<br/>
+                    <code>COUNT()</code> đếm số lượng<br/>
+                    <code>AS</code> đặt tên cho cột<br/>
+                    <code>AND, OR</code> lọc nhiều hơn 1 điều kiện<br/>
+                    <code>IS NULL, IS NOT NNULL </code> tìm giá trị rỗng<br/>
+                    <code>SELECT TOP, LIMIT</code> xác định số lượng bảng ghi trả về<br/>
+                    <code>LIKE</code> tìm kiếm mẫu chỉ định<br/>
+                    <code>IN</code> chỉ định nhiều giá  trị<br/>
+                    <code>BETWEEN</code> chọn giá trị trong phạm vi<br/>
+
                 </div>
             </div>
         </div>
@@ -37,10 +75,53 @@
             <h1>Example (ví dụ)</h1>
             <div class="col-md-10 mx-auto">
                 <div class="col-md-6 float-left">
+<pre>
+    SELECT * FROM `Customer`;
+
+    SELECT Country FROM Customers;
+
+    SELECT Count(*) AS DistinctCountries 
+    FROM (SELECT DISTINCT Country FROM Customers);
+
+    SELECT * FROM customer 
+    WHERE Country='Mexico' AND City='México D.F.'
+
+    UPDATE customer SET ContactName='john' 
+    WHERE CustomerID=6
+
+    DELETE FROM customer WHERE CustomerName='binh'
+
+    SELECT MAX(PostalCode) AS max FROM customer
+
+    SELECT * FROM customer WHERE CustomerName 
+    LIKE '%horn%'
+</pre>
 
                 </div>
                 <div class="col-md-6 float-left">
-                    
+<pre>
+    SELECT CustomerName, City FROM `Customer`;
+
+    SELECT COUNT(DISTINCT Country) FROM Customers;
+
+    SELECT * FROM Customers  WHERE Country='Mexico';
+
+    SELECT * FROM customer 
+    ORDER BY `customer`.`Country` DESC
+
+    INSERT INTO customer(CustomerName, ContactName, 
+    Address, City, PostalCode, Country) 
+    VALUES ('binh','hoang','73 phandinhphung',
+    'hue',6789,'VN')
+
+    SELECT * FROM customer LIMIT 3
+
+    SELECT * FROM customer WHERE Country 
+    IN ('UK','Mexico')
+
+    SELECT * FROM Products
+    WHERE Price NOT BETWEEN 10 AND 20;      
+</pre>
                 </div>
             </div>
         </div>
