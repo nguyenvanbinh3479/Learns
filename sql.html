@@ -39,6 +39,14 @@
 
     Toán tử AND hiển thị một bản ghi nếu tất cả các điều kiện được phân cách bởi AND là TRUE.
     Toán tử OR hiển thị một bản ghi nếu bất kỳ điều kiện nào được phân tách bằng OR là TRUE.
+
+    
+    (INNER) JOIN : Trả về các bản ghi có các giá trị khớp nhau trong cả hai bảng
+    LEFT (OUTER) JOIN : Trả về tất cả các bản ghi từ bảng bên trái và các bản ghi trùng khớp từ bảng bên phải
+    RIGHT (OUTER) JOIN : Trả về tất cả các bản ghi từ bảng bên phải và các bản ghi trùng khớp từ bảng bên trái
+    FULL (OUTER) JOIN : Trả về tất cả các bản ghi khi có một trận đấu trong bảng bên trái hoặc bên phải
+
+    Toán tử UNION được sử dụng để kết hợp tập hợp kết quả của hai hoặc nhiều câu lệnh SELECT.
 </pre>
             </div>
         </div>
@@ -122,6 +130,20 @@
 
     SELECT * FROM Products
     WHERE Price NOT BETWEEN 10 AND 20;      
+
+    SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+    FROM Orders
+    INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+    SELECT Customers.CustomerName, Orders.OrderID
+    FROM Customers
+    LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+    ORDER BY Customers.CustomerName;
+
+    SELECT Customers.CustomerName, Orders.OrderID
+    FROM Customers
+    FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+    ORDER BY Customers.CustomerName;
 </pre>
                 </div>
             </div>
