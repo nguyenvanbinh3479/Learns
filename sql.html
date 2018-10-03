@@ -47,7 +47,51 @@
     FULL (OUTER) JOIN : Trả về tất cả các bản ghi khi có một trận đấu trong bảng bên trái hoặc bên phải
 
     Toán tử UNION được sử dụng để kết hợp tập hợp kết quả của hai hoặc nhiều câu lệnh SELECT.
-</pre>
+
+    Câu lệnh GROUP BY thường được sử dụng với các hàm tổng hợp (COUNT, MAX, MIN, SUM, AVG) để nhóm nhóm kết quả 
+    theo một hoặc nhiều cột.
+
+    Mệnh đề HAVING đã được thêm vào SQL vì không thể sử dụng từ khóa WHERE với các hàm tổng hợp.
+
+    Toán tử EXISTS được sử dụng để kiểm tra sự tồn tại của bất kỳ bản ghi nào trong truy vấn phụ.
+    Toán tử EXISTS trả về true nếu truy vấn phụ trả về một hoặc nhiều bản ghi.
+
+    
+    Các toán tử ANY và ALL được sử dụng với mệnh đề WHERE hoặc HAVING.
+    Toán tử ANY trả về true nếu bất kỳ giá trị truy vấn phụ nào đáp ứng điều kiện.
+    Toán tử ALL trả về true nếu tất cả các giá trị truy vấn con đáp ứng điều kiện.
+
+    Câu lệnh SELECT INTO sao chép dữ liệu từ một bảng vào một bảng mới.
+    
+    Câu lệnh INSERT INTO SELECT sao chép dữ liệu từ một bảng và chèn nó vào một bảng khác.
+
+    Hàm IFNULL () của MySQL cho phép bạn trả về một giá trị thay thế nếu một biểu thức là NULL.
+
+    Một thủ tục được lưu trữ là một mã SQL được chuẩn bị mà bạn có thể lưu, do đó, mã có thể được tái sử dụng nhiều lần.
+
+    Câu lệnh CREATE DATABASE được sử dụng để tạo một cơ sở dữ liệu SQL mới.
+
+    Câu lệnh DROP DATABASE được sử dụng để xóa một cơ sở dữ liệu SQL hiện có.
+
+    Câu lệnh CREATE TABLE được sử dụng để tạo một bảng mới trong cơ sở dữ liệu.
+
+    Câu lệnh DROP TABLE được sử dụng để xóa một bảng có trong cơ sở dữ liệu.
+
+    Câu lệnh ALTER TABLE được sử dụng để thêm, xóa hoặc sửa đổi các cột trong một bảng hiện có.
+
+    Các ràng buộc sau đây thường được sử dụng trong SQL:
+
+    NOT NULL - Đảm bảo rằng một cột không thể có giá trị NULL
+    UNIQUE - Đảm bảo rằng tất cả các giá trị trong một cột đều khác nhau
+    PRIMARY KEY - Sự kết hợp của NOT NULL và UNIQUE. Nhận dạng duy nhất mỗi hàng trong một bảng
+    NGOẠI HỐI - Nhận dạng duy nhất một hàng / bản ghi trong một bảng khác
+    KIỂM TRA - Đảm bảo rằng tất cả các giá trị trong một cột thỏa mãn một điều kiện cụ thể
+    DEFAULT - Đặt giá trị mặc định cho một cột khi không có giá trị nào được chỉ định
+    INDEX - Được sử dụng để tạo và truy xuất dữ liệu từ cơ sở dữ liệu rất nhanh
+
+    một khung nhìn là một bảng ảo dựa trên tập kết quả của một câu lệnh SQL.
+
+    SQL injection là vị trí của mã độc trong các câu lệnh SQL, thông qua đầu vào trang web.
             </div>
         </div>
         <div class="row">
@@ -64,8 +108,13 @@
                     <code>AVG</code> trả về giá trị trung bình<br/>
                     <code>SUM</code> trả về tổng<br/>
                     <code>JOIN</code> Kết hợp các hàng từ hai hay nhiều bảng<br/>
+                    <code>DROP TABLE</code> xóa bảng trong csdl<br/>
+                    <code>ALTER TABLE</code> thêm sửa hoặc xóa bảng hiện có<br/>
                 </div>
                 <div class="col-md-6 float-left">
+                    <code>CREATE DATABASE</code> tạo database<br/>
+                    <code>DROP DATABASE</code> xóa database<br/>
+                    <code>CREATE TABLE</code> tạo bảng mới trong csdl<br/>
                     <code>UPDATE</code> sửa đổi dữ liệu trong cột<br/>
                     <code>FROM</code> từ bảng<br/>
                     <code>COUNT()</code> đếm số lượng<br/>
@@ -76,6 +125,8 @@
                     <code>LIKE</code> tìm kiếm mẫu chỉ định<br/>
                     <code>IN</code> chỉ định nhiều giá  trị<br/>
                     <code>BETWEEN</code> chọn giá trị trong phạm vi<br/>
+                    <code>INTO</code> chép dữ liệu từ 1 bảng <br/>
+
 
                 </div>
             </div>
@@ -104,11 +155,53 @@
 
     SELECT * FROM customer WHERE CustomerName 
     LIKE '%horn%'
+
+    SELECT COUNT(CustomerID), Country
+    FROM Customers
+    GROUP BY Country;
+
+    SELECT COUNT(CustomerID), Country
+    FROM Customers
+    GROUP BY Country
+    HAVING COUNT(CustomerID) > 5;
+
+    SELECT SupplierName
+    FROM Suppliers
+    WHERE EXISTS (SELECT ProductName 
+    FROM Products WHERE SupplierId = 
+    Suppliers.supplierId AND Price < 20);
+
+    SELECT ProductName
+    FROM Products
+    WHERE ProductID = ANY (SELECT ProductID 
+    FROM OrderDetails WHERE Quantity = 10); 
+
+    INSERT INTO Customers (CustomerName, City, Country)
+    SELECT SupplierName, City, Country FROM Suppliers;
+
+    CREATE PROCEDURE SelectAllCustomers
+    AS
+    SELECT * FROM Customers
+    GO;
+
+    DROP TABLE Shippers;
+
+    ALTER TABLE table_name
+    ADD column_name datatype;
+
+    SELECT * FROM Users WHERE UserId = 105 OR 1=1;
+
+
+
 </pre>
 
                 </div>
                 <div class="col-md-6 float-left">
 <pre>
+    CREATE DATABASE testDB;
+
+    DROP DATABASE testDB;
+
     SELECT CustomerName, City FROM `Customer`;
 
     SELECT COUNT(DISTINCT Country) FROM Customers;
@@ -131,19 +224,36 @@
     SELECT * FROM Products
     WHERE Price NOT BETWEEN 10 AND 20;      
 
-    SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
-    FROM Orders
-    INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+    SELECT Orders.OrderID, Customers.CustomerName, 
+    Orders.OrderDate FROM Orders
+    INNER JOIN Customers ON Orders.CustomerID=
+    Customers.CustomerID;
 
     SELECT Customers.CustomerName, Orders.OrderID
     FROM Customers
-    LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
-    ORDER BY Customers.CustomerName;
+    LEFT JOIN Orders ON Customers.CustomerID = 
+    Orders.CustomerID  ORDER BY Customers.CustomerName;
 
     SELECT Customers.CustomerName, Orders.OrderID
     FROM Customers
-    FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
-    ORDER BY Customers.CustomerName;
+    FULL OUTER JOIN Orders ON Customers.CustomerID=
+    Orders.CustomerID ORDER BY Customers.CustomerName;
+
+    SELECT * INTO CustomersBackup2017
+    FROM Customers;
+
+    SELECT ProductName, UnitPrice * (UnitsInStock + 
+    IFNULL(UnitsOnOrder, 0)) FROM Products   
+
+    CREATE TABLE Persons (
+        PersonID int,
+        LastName varchar(255),
+        FirstName varchar(255),
+        Address varchar(255),
+        City varchar(255) 
+    );
+
+    SELECT * FROM [Current Product List];
 </pre>
                 </div>
             </div>
