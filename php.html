@@ -19,11 +19,78 @@
             <div class="col-md-10 mx-auto">
 <pre>
     PHP là một ngôn ngữ kịch bản máy chủ, và một công cụ mạnh mẽ để tạo ra các trang Web động và tương tác.
-
     PHP là từ viết tắt của "PHP: Hypertext Preprocessor"
-    PHP là một ngôn ngữ kịch bản nguồn mở được sử dụng rộng rãi
-    Các tập lệnh PHP được thực thi trên máy chủ
-    PHP là miễn phí để tải về và sử dụng
+
+    PHP có thể tạo ra nội dung trang động
+    PHP có thể tạo, mở, đọc, ghi, xóa và đóng các tệp trên máy chủ
+    PHP có thể thu thập dữ liệu biểu mẫu
+    PHP có thể gửi và nhận cookie
+    PHP có thể thêm, xóa, sửa đổi dữ liệu trong cơ sở dữ liệu của bạn
+    PHP có thể được sử dụng để kiểm soát quyền truy cập của người dùng
+    PHP có thể mã hóa dữ liệu
+
+    Biến bắt đầu bằng ký hiệu $, theo sau là tên của biến
+    Tên biến phải bắt đầu bằng một ký tự hoặc ký tự gạch dưới
+    Tên biến không thể bắt đầu bằng số
+    Tên biến chỉ có thể chứa ký tự chữ và số và dấu gạch dưới (Az, 0-9 và _)
+    Tên biến phân biệt chữ hoa chữ thường ($ age và $ AGE là hai biến khác nhau)
+
+    Phạm vi của một biến là một phần của kịch bản mà biến có thể được tham chiếu / sử dụng.
+    PHP có ba phạm vi biến khác nhau:
+    địa phương là truy cập trong hàm
+    toàn cầu là truy cập ngoài hàm
+    tĩnh truy cập trong hàm và không bị xóa khi chạy xong hàm
+
+    PHP hỗ trợ các kiểu dữ liệu sau:
+    Chuỗi
+    Số nguyên
+    Float (số dấu phẩy động - còn được gọi là double)
+    Boolean
+    Mảng
+    đối tượng
+    Null
+    tài nguyên
+
+    Hằng số giống như các biến ngoại trừ khi chúng được xác định, chúng không thể thay đổi hoặc không xác định được.
+    Các hằng số được tự động toàn cầu và có thể được sử dụng trên toàn bộ tập lệnh.
+
+    PHP chia các toán tử trong các nhóm sau:
+    Toán tử số học
+    Toán tử chuyển nhượng
+    Toán tử so sánh
+    Các toán tử tăng / giảm
+    Toán tử logic
+    Toán tử chuỗi
+    Toán tử mảng
+
+    Một mảng là một biến đặc biệt, có thể chứa nhiều hơn một giá trị tại một thời điểm.
+
+    sort() - sắp xếp các mảng theo thứ tự tăng dần
+    rsort() - sắp xếp các mảng theo thứ tự giảm dần
+    asort() - sắp xếp các mảng liên kết theo thứ tự tăng dần, theo giá trị
+    ksort() - sắp xếp các mảng liên kết theo thứ tự tăng dần, theo khóa
+    arsort() - sắp xếp các mảng liên kết theo thứ tự giảm dần, theo giá trị
+    krsort() - sắp xếp các mảng liên kết theo thứ tự giảm dần, theo khóa
+
+    Một số biến được xác định trước trong PHP là "superglobals", có nghĩa là chúng luôn có thể truy cập, bất kể phạm vi - và bạn có thể truy cập chúng từ bất kỳ hàm, lớp hoặc tệp nào mà không phải thực hiện bất kỳ điều gì đặc biệt.
+    Các biến superglobal PHP là:
+    $ GLOBALS để truy cập các biến toàn cầu
+    $ _SERVER chứa thông tin về các tiêu đề, đường dẫn và vị trí tập lệnh
+    $ _REQUEST để thu thập dữ liệu sau khi gửi biểu mẫu HTML.
+    $ _POST để thu thập dữ liệu biểu mẫu sau khi gửi biểu mẫu HTML
+    $ _GET để thu thập dữ liệu biểu mẫu sau khi gửi biểu mẫu HTML
+    $ _FILES
+    $ _ENV
+    $ _COOKIE
+    $ _SESSION
+
+    Mảng đa chiều là một mảng chứa một hoặc nhiều mảng.
+
+    Có thể chèn nội dung của một tệp PHP vào một tệp PHP khác (trước khi máy chủ thực thi nó), với câu lệnh include hoặc require.
+    require sẽ tạo ra lỗi nghiêm trọng (E_COMPILE_ERROR) và dừng tập lệnh
+    include sẽ chỉ tạo cảnh báo (E_WARNING) và tập lệnh sẽ tiếp tục
+
+
 </pre>
             </div>
         </div>
@@ -31,26 +98,20 @@
             <h1>Class (đặt tên lớp)</h1>
             <div class="col-md-10 mx-auto">
                 <div class="col-md-6 float-left">
-                    <code>echo</code> hiển thị text<br/>
+                    <code>echo</code> hiển thị thông báo<br/>
+                    <code>strlen</code> độ dài chuỗi<br/>
+                    <code>str_word_count()</code> đếm số từ<br/>
+                    <code>strrev()</code> đảo chuỗi<br/>
+                    <code>strpos()</code>tìm văn bản<br/>
+                    <code>str_replace()</code> thay thế chuỗi<br/>
                 </div>
                 <div class="col-md-6 float-left">
-                    
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <h1>Example (ví dụ)</h1>
-            <div class="col-md-10 mx-auto">
-                <div class="col-md-6 float-left">
-                    <h1>hiển thị text</h1>
-                    <div>
-                        <?php
-                            echo "My first PHP script!";
-                        ?>
-                    </div>
-                </div>
-                <div class="col-md-6 float-left">
-
+                    <code>$x</code> biến<br/>    
+                    <code>define()</code> tạo hằng số<br/> 
+                    <code>switch</code> thực hiện hành động khác nhau trên điều kiện khác nhau<br/>          
+                    <code>array()</code> tạo 1 mảng<br/>     
+                    <code>date()</code> định dạng ngày<br/>
+                    <code>readfile()</code> đọc file
                 </div>
             </div>
         </div>
